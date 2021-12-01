@@ -43,13 +43,13 @@ Config.ShowTemp = false
 
 -- simple localization
 Config.Language = {
-    joining = "\xF0\x9F\x8E\x89Entrando...",
-    connecting = "\xE2\x8F\xB3Carregando...",
-    idrr = "\xE2\x9D\x97[Queue] Error: Não foi identificado seu id, por favor, relogue.",
-    err = "\xE2\x9D\x97[Queue] Temos um erro",
-    pos = "\xF0\x9F\x90\x8CVocê é %d/%d na fila \xF0\x9F\x95\x9C%s",
-    connectingerr = "\xE2\x9D\x97[Queue] Error: Erro ao adicionar você a fila de espera.",
-    timedout = "\xE2\x9D\x97[Queue] Error: O tempo de espera esgotou?!",
-    wlonly = "\xE2\x9D\x97[Queue] Você não está na whitelist deste servidor.",
-    steam = "\xE2\x9D\x97 [Queue] Error: Sua steam precisa estar aberta."
+    joining = "\xF0\x9F\x8E\x89Entering...",
+    connecting = "\xE2\x8F\xB3Loading...",
+    idrr = "\xE2\x9D\x97[Queue] Error: Your id has not been identified, please log in again...",
+    err = "\xE2\x9D\x97[Queue] Error",
+    pos = "\xF0\x9F\x90\x8CVocê é %d/%d in queue \xF0\x9F\x95\x9C%s",
+    connectingerr = "\xE2\x9D\x97[Queue] Error: Error adding you to the queue...",
+    timedout = "\xE2\x9D\x97[Queue] Error: Waiting time expired...",
+    wlonly = "\xE2\x9D\x97[Queue] You are not whitelisted...",
+    steam = "\xE2\x9D\x97 [Queue] Error: Open steam..."
 }
