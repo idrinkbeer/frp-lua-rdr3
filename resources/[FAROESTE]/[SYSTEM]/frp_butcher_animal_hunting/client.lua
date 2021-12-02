@@ -16,7 +16,7 @@ local closestSpotIndex
 
 local prompt
 local prompt_shop
-local prompt_name = CreateVarString(10, "LITERAL_STRING", "Açogueiro")
+local prompt_name = CreateVarString(10, "LITERAL_STRING", "Butcher")
 
 Citizen.CreateThread(
     function()
@@ -138,11 +138,11 @@ AddEventHandler(
         local r = {}
 
         if type == 1 then
-            TriggerEvent("FRP:NOTIFY:Simple", "Estou a procura de um(a) " .. GetModelAnimalName(entityModel) .. ", irei recompensa-lo caso você traga para mim", 5000)
+            TriggerEvent("FRP:NOTIFY:Simple", "I'm looking for a " .. GetModelAnimalName(entityModel) .. ", I will reward you if you bring it to me", 5000)
         elseif type == 2 then
-            TriggerEvent("FRP:NOTIFY:Simple", "O açougueiro ainda está a procura de um(a) " .. GetModelAnimalName(entityModel), 5000)
+            TriggerEvent("FRP:NOTIFY:Simple", "The butcher is still looking for a " .. GetModelAnimalName(entityModel), 5000)
         elseif type == 3 then
-            cAPI.notify("error", "Termine a caça atual para poder começar outra!")
+            cAPI.notify("error", "Finish the current hunt so you can start another one!")
         end
     end
 )
@@ -170,7 +170,7 @@ function HandlePrompts()
 
     if PromptIsJustPressed(prompt_shop) then
         -- TriggerEvent("FRP:SHOP:SELL:OpenShop", "Acogueiro")
-        TriggerEvent("FRP:SHOP:OpenShopByName", "Acogueiro")
+        TriggerEvent("FRP:SHOP:OpenShopByName", "Butcher")
     end
 end
 
@@ -179,7 +179,7 @@ function InitiatePrompts()
 
     prompt_shop = PromptRegisterBegin()
     PromptSetControlAction(prompt_shop, 0x5966D52A)
-    PromptSetText(prompt_shop, CreateVarString(10, "LITERAL_STRING", "Vender Mantimentos"))
+    PromptSetText(prompt_shop, CreateVarString(10, "LITERAL_STRING", "Sell"))
     PromptSetEnabled(prompt_shop, 1)
     PromptSetVisible(prompt_shop, 1)
     PromptSetStandardMode(prompt_shop, 1)
@@ -189,7 +189,7 @@ function InitiatePrompts()
     prompt = PromptRegisterBegin()
 
     PromptSetControlAction(prompt, 0xE8342FF2)
-    PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Caça Específica"))
+    PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Go Hunting"))
     PromptSetEnabled(prompt, true)
     PromptSetVisible(prompt, true)
     PromptSetHoldMode(prompt, true)
