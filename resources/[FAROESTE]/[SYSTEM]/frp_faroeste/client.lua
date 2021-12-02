@@ -45,7 +45,7 @@ RegisterCommand("progtest2", function()
     exports['frp_progbar']:Progress({
         name = "creating_tents",
         duration = 60*60,
-        label = "setting Up Tent",
+        label = "setting up Tent",
         useWhileDead = false,
         canCancel = false,
         controlDisables = {
