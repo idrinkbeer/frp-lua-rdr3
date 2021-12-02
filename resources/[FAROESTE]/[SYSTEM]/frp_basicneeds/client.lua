@@ -114,13 +114,13 @@ AddEventHandler(
 
 function DirectionHeading(heading)
     if ((heading >= 0 and heading < 45) or (heading >= 315 and heading < 360)) then
-        return "Norte" 
+        return "North" 
     elseif (heading >= 45 and heading < 135) then
-        return "Oeste" 
+        return "West" 
     elseif (heading >= 135 and heading < 225) then
-        return "Sul"
+        return "South"
     elseif (heading >= 225 and heading < 315) then
-        return "Leste" 
+        return "East" 
     end
 end
 
@@ -247,7 +247,7 @@ Citizen.CreateThread(function()
         elseif GetDistanceBetweenCoords(Coords.x, Coords.y, Coords.z, Town["Locaties"][9]["X"], Town["Locaties"][9]["Y"], Town["Locaties"][9]["Z"], true) <= 100.0 then
             location = 'Annerburg'
         else
-            location = 'Desconhecido'
+            location = 'Wilderness'
         end
     end
 end)
