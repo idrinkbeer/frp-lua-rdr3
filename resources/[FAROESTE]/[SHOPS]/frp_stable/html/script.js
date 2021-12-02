@@ -83,7 +83,7 @@ window.addEventListener('message', function(event) {
                 <li>
                     <div class="collapsible-header col s12 panel ">
                         <div class="col s12 panel-title">
-                            <h6 class="grey-text">VOCÊ NÃO POSSUI CAVALOS</h6>
+                            <h6 class="grey-text">YOU DON'T HAVE HORSES</h6>
                         </div>
                     </div>
                 </li>
@@ -125,10 +125,10 @@ window.addEventListener('message', function(event) {
                     </div>
                     <div class="collapsible-body col s12 panel item" id="${HorseID}">
                         <div class="col s6 panel-col item" onclick="SelectHorse(${HorseID})">
-                            <h6 class="grey-text title">Escolher</h6>
+                            <h6 class="grey-text title">Select</h6>
                         </div>
                         <div class="col s6 panel-col item" onclick="SellHorse(${HorseID})">
-                            <h6 class="grey-text title">Vender por $10</h6>
+                            <h6 class="grey-text title">Sell For $10</h6>
                         </div>
                     </div>
                 </li> 
