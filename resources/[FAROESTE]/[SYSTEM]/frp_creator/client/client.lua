@@ -120,7 +120,7 @@ Citizen.CreateThread(
                     if IsControlJustReleased(0, 0xC7B5340A) and pedSelected ~= nil then
                         DoScreenFadeOut(1800)
                         Wait(2000)
-                        interpCamera2("Corpo", pedSelected)
+                        interpCamera2("Body", pedSelected)
                         InterP2 = true
                         SetEntityCoords(pedSelected, -558.56, -3781.16, 237.59)
                         SetEntityHeading(pedSelected, 87.21)
@@ -267,7 +267,7 @@ RegisterNUICallback(
 RegisterNUICallback(
     "Olhos",
     function(data)
-        interpCamera2("Rosto", pedSelected)
+        interpCamera2("Face", pedSelected)
         if sex == "mp_male" then
             for k, v in pairs(MaleEyes) do
                 if MaleEyes[k].id == tonumber(data.id) then
@@ -289,7 +289,7 @@ RegisterNUICallback(
 RegisterNUICallback(
     "Porte",
     function(data)
-        interpCamera2("Corpo", pedSelected)   
+        interpCamera2("Body", pedSelected)   
         local offset = 132
 
         if sex == "mp_female" then
@@ -310,7 +310,7 @@ RegisterNUICallback(
 RegisterNUICallback(
     "Gordura",
     function(data)
-        interpCamera2("Corpo", pedSelected)   
+        interpCamera2("Body", pedSelected)   
 
         local WAIST_TYPES = {
             -2045421226,    -- smallest
@@ -349,7 +349,7 @@ RegisterNUICallback(
 RegisterNUICallback(
     "Dentes",
     function(data)
-        interpCamera2("Rosto", pedSelected)   
+        interpCamera2("Face", pedSelected)   
         if sex == "mp_male" then
             for k, v in pairs(MaleTeeth) do
                 if MaleTeeth[k].id == tonumber(data.id) then
@@ -381,7 +381,7 @@ RegisterNUICallback(
 RegisterNUICallback(
     "Cabelos",
     function(data)
-        interpCamera2("Rosto", pedSelected)   
+        interpCamera2("Face", pedSelected)   
         if data.id == 0 then
             HairUsing = 0
             Citizen.InvokeNative(0xD710A5007C2AC539, pedSelected, 0x864B03AE, 0) -- Set target category, here the hash is for hats
@@ -432,7 +432,7 @@ RegisterNUICallback(
 RegisterNUICallback(
     "BarbaMenu",
     function(data)
-        interpCamera("Rosto", pedSelected)
+        interpCamera("Face", pedSelected)
         if data.id == 0 then
             MustacheUsing = 0
             Citizen.InvokeNative(0xD710A5007C2AC539, pedSelected, 0xF8016BCA, 0) -- Set target category, here the hash is for hats
@@ -456,9 +456,9 @@ RegisterNUICallback(
     "FaceFeatured",
     function(data)
         if sex == "mp_male" then
-            interpCamera2("Rosto", pedSelected)   
+            interpCamera2("Face", pedSelected)   
         else
-            interpCamera2("Rosto", pedSelected)   
+            interpCamera2("Face", pedSelected)   
         end
         local ped = pedSelected
         local index = tonumber(data.facefeature)
@@ -472,9 +472,9 @@ RegisterNUICallback(
     "PedSize",
     function(data)
         if sex == "mp_male" then
-            interpCamera2("Rosto", pedSelected)   
+            interpCamera2("Face", pedSelected)   
         else
-            interpCamera2("Rosto", pedSelected)   
+            interpCamera2("Face", pedSelected)   
         end
         local ped = pedSelected
 
