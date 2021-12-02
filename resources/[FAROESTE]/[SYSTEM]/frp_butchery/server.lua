@@ -83,7 +83,7 @@ AddEventHandler(
 
         if payment == nil then
             TriggerClientEvent("FRP:BUTCHER:EntityNotAccepted", _source, entity)
-            User:notify("error", "O açogueiro não quer este animal")
+            User:notify("error", "The butcher doesn't want this animal")
             return
         end
 
