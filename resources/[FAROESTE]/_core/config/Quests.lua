@@ -1,7 +1,7 @@
 Quests = {
     ['carteiro'] = {
-        name = "Entregue Cartas",
-        helptext = "Missão destinada a entrega de cartas nos devidos lugares marcados no mapa.",
+        name = "Deliver Letters",
+        helptext = "Mission:Deliver letters to the appropriate places marked on the map.",
         need = {
             cartas = 15,
             needReturn = true
@@ -12,8 +12,8 @@ Quests = {
         }
     },
     ['entregador'] = {
-        name = "Entregue Cargas",
-        helptext = "Missão destinada a entrega de cargas nos devidos lugares marcados no mapa.",
+        name = "Deliver Cargo",
+        helptext = "Mission:Deliver cargo to the appropriate places marked on the map.",
         need = {
             cargas = 1,
             needReturn = true
@@ -24,8 +24,8 @@ Quests = {
         }
     },
     ['pescador'] = {
-        name = "Pesca? Oi? Pesca?",
-        helptext = "Vá até um dos lagos que foi marcado em seu mapa para conseguir utilizar sua vara, já que ninguém usa KKKK.",
+        name = "Fishing",
+        helptext = "Go to one of the lakes that has been marked on your map to be able to fish.",
         need = {
             peixes = 25,
             needReturn = true
@@ -36,8 +36,8 @@ Quests = {
         }
     },
     ['cacadorderecompensas'] = {
-        name = "Capture o Criminoso",
-        helptext = "Fale com um chefão deste condado para que você consiga a localização de um dos criminosos perigosos desta cidade.",
+        name = "Bounty Hunt",
+        helptext = "Speak with a boss in this county so you can find the location of one of the dangerous criminals in this town.",
         need = {
             criminoso = 1,
             needReturn = true
@@ -48,8 +48,8 @@ Quests = {
         }
     },
     ['mineradordecobre'] = {
-        name = "Minerar Cobre",
-        helptext = "Encontre uma mina proximo ao local marcado no mapa, este ponto não é um lugar exato, vá em busca do ponto!",
+        name = "Mine Copper",
+        helptext = "Find a mine near the location marked on the map, this point is not an exact place, go in search around the point!",
         need = {
             cobre = 1000,
             needReturn = true
@@ -60,8 +60,8 @@ Quests = {
         }
     },
     ['mineradordeprata'] = {
-        name = "Minerar Prata",
-        helptext = "Encontre uma mina proximo ao local marcado no mapa, este ponto não é um lugar exato, vá em busca do ponto!",
+        name = "Mine Silver",
+        helptext = "Find a mine near the location marked on the map, this point is not an exact place, go in search around the point!",
         need = {
             prata = 1000,
             needReturn = true
@@ -72,8 +72,8 @@ Quests = {
         }
     },
     ['mineradordeouro'] = {
-        name = "Minerar Ouro",
-        helptext = "Encontre uma mina proximo ao local marcado no mapa, este ponto não é um lugar exato, vá em busca do ponto!",
+        name = "Mine Gold",
+        helptext = "Find a mine near the location marked on the map, this point is not an exact place, go in search around the point!",
         need = {
             ouro = 1000,
             needReturn = true
