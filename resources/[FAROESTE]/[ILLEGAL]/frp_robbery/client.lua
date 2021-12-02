@@ -69,7 +69,7 @@ Citizen.CreateThread(
                 if weaponHash ~= hashUnarmed then
                     if interiorIndexBeingRobbed == nil then
                         if not shootingToStartCooldown then
-                            notify("Atire para começar o assalto.")
+                            notify("Shoot to start the assault.")
                             --  TriggerEvent('FRP:Notify', 'Atire para começar o assalto.')
                             if IsPedShooting(ped) then
                                 initShootingCountdown()
@@ -98,7 +98,7 @@ Citizen.CreateThread(
                                 if NetworkIsSessionActive() == 1 then
                                     TriggerServerEvent("FRP:ROBBERY:TryToStartRobbery", interiorIndexPlayerIsIn, participants)
                                 else
-                                    cAPI.notify("error", "Sessão solo!")
+                                    cAPI.notify("error", "Solo session!")
                                 end
                             end
                         else
@@ -144,12 +144,12 @@ Citizen.CreateThread(
                         -- local hours = secondsUntilRobberyEnds / 3600
                         local minutes = math.floor((secondsUntilRobberyEnds % 3600) / 60)
                         local seconds = secondsUntilRobberyEnds % 60
-                        drawText(minutes .. " minutos e " .. seconds .. " segundos", true)
+                        drawText(minutes .. " minutes and " .. seconds .. " seconds", true)
                     end
                 end
             else
                 if secondsUntilAbandonRobbery ~= nil then
-                    drawText("~r~Volte para dentro do banco! " .. math.floor((secondsUntilAbandonRobbery / 10)) .. " segundos", true)
+                    drawText("~r~Get back inside the bank! " .. math.floor((secondsUntilAbandonRobbery / 10)) .. " seconds", true)
                 end
             end
             --print(secondsUntilAbandonRobbery)
@@ -254,7 +254,7 @@ AddEventHandler(
             initSecondsCountdown(seconds)
             cAPI.AddWantedTime(true, 30)
         end
-        TriggerEvent("FRP:TOAST:New", "alert", "O assalto acabará em " .. seconds .. " segundos")
+        TriggerEvent("FRP:TOAST:New", "alert", "The robbery will end in " .. seconds .. " seconds")
     end
 )
 
