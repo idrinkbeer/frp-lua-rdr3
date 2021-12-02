@@ -40,7 +40,7 @@ AddEventHandler(
 
             lockpick(100, 10, 10, 10)
         else
-            cAPI.notify("error", "Nenhum trancada porta por perto!")
+            cAPI.notify("error", "No locked door close by!")
         end
     end
 )
