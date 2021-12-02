@@ -55,13 +55,13 @@ AddEventHandler(
 
                     TriggerClientEvent("FRP:FORT:RespondToUnlocksRequest", _source, unlocks)
                 else
-                    User:notify("error", "Você não tem acesso a esse posto")
+                    User:notify("error", "You do not have access to this post")
                 end
             else
-                User:notify("error", "Sua organização não é dona de nenhum posto")
+                User:notify("error", "Your organization does not own any posts.")
             end
         else
-            User:notify("error", "Você não está em uma org ilegal")
+            User:notify("error", "You are not on an illegal org")
         end
     end
 )
