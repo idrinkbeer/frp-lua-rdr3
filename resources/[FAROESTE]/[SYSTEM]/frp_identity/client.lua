@@ -221,12 +221,12 @@ RegisterNUICallback(
     "deleteCharacter",
     function(charId)
         TriggerServerEvent("FRP:IDENTITY:deleteCharacter", charId)
-        TriggerEvent("FRP:NOTIFY:Simple", "Personagem deletado.")
+        TriggerEvent("FRP:NOTIFY:Simple", "Character deleted.")
     end
 )
 
 RegisterCommand(
-    "Deletarenti",
+    "Delete",
     function()
         Destroy()
     end
