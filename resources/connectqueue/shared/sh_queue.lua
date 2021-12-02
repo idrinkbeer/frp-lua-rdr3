@@ -235,7 +235,7 @@ function Queue:AddToQueue(ids, connectTime, name, src, deferrals)
             end
 
             if _pos then
-                Queue:DebugPrint(string_format("%s[%s][prioridade] %d/%d", tmp.name, ids[1], _pos, queueCount))
+                Queue:DebugPrint(string_format("%s[%s][priority] %d/%d", tmp.name, ids[1], _pos, queueCount))
                 break
             end
         end
@@ -579,8 +579,8 @@ local function playerConnect(name, setKickReason, deferrals)
                         -- Queue:DebugPrint("Timeout do connectqueue em " .. diff .. " segundos")
 
                         if os.time() >= timeoutAt then
-                            DropPlayer(src, "Você entrou em solo? Caso aconteça novamente, contate a staff!")
-                            Queue:DebugPrint(name .. " foi kickado, connectqueue não recebeu resposta do sessionmanager")
+                            DropPlayer(src, "You entered in solo? if it happens again, contact a staff!")
+                            Queue:DebugPrint(name .. " got kicked, connectqueue received no response from sessionmanager")
                             break
                         end
                     end
@@ -611,7 +611,7 @@ local function playerConnect(name, setKickReason, deferrals)
         -- prevent joining
         done(Config.Language.iderr)
         CancelEvent()
-        Queue:DebugPrint(name .. " foi kickado, não foi possivel achar nenhuma identificaçao do mesmo.")
+        Queue:DebugPrint(name .. " was kicked, it was not possible to find any identification of it.")
         return
     end
 
@@ -638,10 +638,10 @@ local function playerConnect(name, setKickReason, deferrals)
             if reason then
                 -- prevent joining
                 allow = false
-                done(reason and tostring(reason) or "Você não pode entrar no servidor. Tente mais tarde!")
+                done(reason and tostring(reason) or "You cannot login to the server. Try later!")
                 Queue:RemoveFromQueue(ids)
                 Queue:RemoveFromConnecting(ids)
-                Queue:DebugPrint(string_format("%s[%s] bloqueado de entrar; Razao: %s", name, ids[1], reason))
+                Queue:DebugPrint(string_format("%s[%s] blocked from entering; Reason: %s", name, ids[1], reason))
                 CancelEvent()
                 return
             end
@@ -690,7 +690,7 @@ local function playerConnect(name, setKickReason, deferrals)
     if Queue:IsInQueue(ids) then
         rejoined = true
         Queue:UpdatePosData(src, ids, deferrals)
-        Queue:DebugPrint(string_format("%s[%s] rapidamente reentrou na fila após sair dela", name, ids[1]))
+        Queue:DebugPrint(string_format("%s[%s] quickly rejoined the queue after leaving it", name, ids[1]))
     else
         Queue:AddToQueue(ids, connectTime, name, src, deferrals)
 
@@ -721,7 +721,7 @@ local function playerConnect(name, setKickReason, deferrals)
         end
 
         done()
-        Queue:DebugPrint(name .. "[" .. ids[1] .. "] está entrando na sessão.")
+        Queue:DebugPrint(name .. "[" .. ids[1] .. "] is entering the session.")
 
         return
     end
@@ -797,7 +797,7 @@ local function playerConnect(name, setKickReason, deferrals)
             end
 
             Queue:RemoveFromQueue(ids)
-            Queue:DebugPrint(name .. "[" .. ids[1] .. "] está entrando na sessão.")
+            Queue:DebugPrint(name .. "[" .. ids[1] .. "] is entering the session.")
 
             -- WaitForSessionManagerResponse()
 
