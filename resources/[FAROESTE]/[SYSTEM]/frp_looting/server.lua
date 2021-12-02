@@ -26,7 +26,7 @@ AddEventHandler(
         local User = API.getUserFromSource(_source)
 
         if not pocketables[entityModel] then
-            User:notify("Você não pode pegar este item!")
+            User:notify("You cannot get this item!")
             TriggerClientEvent("FRP:LOOTING:LooteableDenied", _source, entityModel)
             return
         end
@@ -43,7 +43,7 @@ AddEventHandler(
 
         if Inventory:addItem(itemId, 1) then
         else
-            User:notify("Espaço insuficiente!")
+            User:notify("Insufficient space!")
             TriggerClientEvent("FRP:LOOTING:LooteableDenied", _source, entityModel)
         end
     end
