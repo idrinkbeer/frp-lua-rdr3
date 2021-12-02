@@ -19,7 +19,7 @@ function load(interiorId)
         {"rifle_varmint", 7200, 300, 1, "w_repeater_pumpaction01"},
         {"rifle_boltaction", 21600, 1000, 1, "w_rifle_boltaction01"},
 	--{"shotgun_pump", 21600, 1000, 1, "w_shotgun_pumpaction01"}, not working... idk why
-	--{"sniperrifle_carcano", 21600, 1000, 1, "w_sniperrifle_carcano01"}, doesnt appear...
+	--{"sniperrifle_carcano", 21600, 1000, 1, "w_sniperrifle_carcano01"}, doesnt appear T_T...
     }
 
     local gunsmith_data = Config.Gunsmith_datas[interiorId]
