@@ -12,14 +12,14 @@ function load(interiorId)
         {"revolver_lemat", 31700, 1300, 1, "w_revolver_lemat01"},
         {"revolver_cattleman", 5000, 200, 1, "w_revolver_cattleman01"},
         {"revolver_doubleaction", 257, 11, 1, "w_revolver_doubleaction01"},
-		{"revolver_schofield", 23400, 1000, 1, "w_revolver_schofield01"},
+	{"revolver_schofield", 23400, 1000, 1, "w_revolver_schofield01"},
         {"repeater_carbine", 9000, 400, 1, "w_repeater_carbine01"},
-		{"repeater_henry", 23400, 1000, 1, "w_repeater_henry01"},
-		{"repeater_winchester", 23400, 1000, 1, "w_repeater_winchester01"},		
+	{"repeater_henry", 23400, 1000, 1, "w_repeater_henry01"},
+	{"repeater_winchester", 23400, 1000, 1, "w_repeater_winchester01"},		
         {"rifle_varmint", 7200, 300, 1, "w_repeater_pumpaction01"},
         {"rifle_boltaction", 21600, 1000, 1, "w_rifle_boltaction01"},
-		--{"shotgun_pump", 21600, 1000, 1, "w_shotgun_pumpaction01"}, not working... idk why
-		--{"sniperrifle_carcano", 21600, 1000, 1, "w_sniperrifle_carcano01"}, doesnt appear...
+	--{"shotgun_pump", 21600, 1000, 1, "w_shotgun_pumpaction01"}, not working... idk why
+	--{"sniperrifle_carcano", 21600, 1000, 1, "w_sniperrifle_carcano01"}, doesnt appear...
     }
 
     local gunsmith_data = Config.Gunsmith_datas[interiorId]
