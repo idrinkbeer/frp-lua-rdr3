@@ -70,7 +70,7 @@ Citizen.CreateThread(
                     if GetDistanceZTrue(pos, EntCoords) < 3 then
                         nearbyObject, nearbyID = Rocks[i], i
                         if nearbyObject then
-                            DrawText3D(EntCoords.x, EntCoords.y, EntCoords.z, "Pressione E para mineirar")
+                            DrawText3D(EntCoords.x, EntCoords.y, EntCoords.z, "Press E to mine")
                             if whenKeyJustPressed("E") then
                                 local W = math.random(8000, 15000)
                                 MineAndAttach()
@@ -184,7 +184,7 @@ function MineAndAttach()
             waiting = waiting + 100
             Citizen.Wait(100)
             if waiting > 5000 then
-                TriggerEvent("redemrp_notification:start", "Request Animation is broken, Relog", 4, "warning")
+                --TriggerEvent("redemrp_notification:start", "Request Animation is broken, Relog", 4, "warning") why is this still here guys?
                 break
             end
         end
