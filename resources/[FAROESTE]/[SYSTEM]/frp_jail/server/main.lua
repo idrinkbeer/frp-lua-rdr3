@@ -121,5 +121,5 @@ function unjail(target)
 
 	TriggerClientEvent('FRP:JAIL:unjail', target)
 
-	print(nome .. ' foi solto por ')
+	print(nome .. ' was released ')
 end
