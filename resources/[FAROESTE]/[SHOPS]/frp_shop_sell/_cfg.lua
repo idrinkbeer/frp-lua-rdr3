@@ -2,7 +2,7 @@ Config = {}
 
 Config.ShopDatas = {
 	{
-		name = "Mercado Geral",
+		name = "General Store",
 		{
 			-- {"tobacco", 100, 40, 10},
 			-- {"corn", 100, 40, 10},
@@ -13,7 +13,7 @@ Config.ShopDatas = {
 		}
 	},
 	{
-		name = "Acogueiro",
+		name = "Butcher",
 		{
 			-- {"meat", 80, 32, 1},
 			-- {"feather_1", 100, 40, 5},
@@ -27,7 +27,7 @@ Config.ShopDatas = {
 		}
 	},
 	{
-		name = "Posto de Troca",
+		name = "Trading Post",
 		{
 			-- {"raw_coal", 100, 40, 2},
 			-- {"raw_iron", 200, 80, 2},
@@ -43,7 +43,7 @@ Config.ShopLocations = {
 	-- ["Mercado Geral"] = {
 	-- 	{-883.373, -1421.761, 44.413}
 	-- },
-	["Posto de Troca"] = {
+	["Trading Post"] = {
 		{3027.058, 561.334, 44.794}
 	}
 }
