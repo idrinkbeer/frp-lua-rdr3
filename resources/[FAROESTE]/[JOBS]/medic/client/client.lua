@@ -17,7 +17,7 @@ AddEventHandler('FRP:MEDIC:checkdeath', function()
     TriggerServerEvent('FRP:MEDIC:checkcallback', GetPlayerServerId(player))
    -- TriggerEvent('chatMessage', 'SISTEMA', {255, 255, 255}, 'Curou o (' .. GetPlayerName(player) .. ')')
   else
-    TriggerEvent('chatMessage', 'SISTEMA', {255, 255, 255}, 'Ninguem por perto')
+    TriggerEvent('chatMessage', 'SISTEMA', {255, 255, 255}, 'No one nearby')
   end
 end)
 
@@ -29,7 +29,7 @@ AddEventHandler('FRP:MEDIC:TreatmentCheck', function()
     TriggerServerEvent('FRP:MEDIC:TreatmentCallback', GetPlayerServerId(player))
    -- TriggerEvent('chatMessage', 'SISTEMA', {255, 255, 255}, 'Curou o (' .. GetPlayerName(player) .. ')')
   else
-    TriggerEvent('chatMessage', 'SISTEMA', {255, 255, 255}, 'Ninguem por perto')
+    TriggerEvent('chatMessage', 'SISTEMA', {255, 255, 255}, 'No one nearby')
   end
 end)
 
@@ -41,7 +41,7 @@ AddEventHandler('FRP:MEDIC:revivecheck', function()
     TriggerServerEvent('FRP:MEDIC:revivecallback', GetPlayerServerId(player))
    -- TriggerEvent('chatMessage', 'SISTEMA', {255, 255, 255}, 'Curou o (' .. GetPlayerName(player) .. ')')
   else
-    TriggerEvent('chatMessage', 'SISTEMA', {255, 255, 255}, 'Ninguem por perto')
+    TriggerEvent('chatMessage', 'SISTEMA', {255, 255, 255}, 'No one nearby')
   end
 end)
 
