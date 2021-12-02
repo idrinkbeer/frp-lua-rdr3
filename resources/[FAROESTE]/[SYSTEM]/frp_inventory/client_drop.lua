@@ -17,7 +17,7 @@ RegisterNetEvent("FRP:INVENTORY:DROP:Create")
 AddEventHandler(
     "FRP:INVENTORY:DROP:Create",
     function(index, x, y, z, itemId, itemAmount)
-        local itemName = ItemList[itemId].name or "Item Desconhecido"
+        local itemName = ItemList[itemId].name or "Unknown Item"
         local itemWeight = ItemList[itemId].weight * itemAmount
 
         if itemId == "money" or itemId == "gold" then
@@ -212,7 +212,7 @@ function prepareMyPrompt()
     prompt = PromptRegisterBegin()
     prompt_group = GetRandomIntInRange(0, 0xffffff)
     PromptSetControlAction(prompt, 0xE8342FF2)
-    PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Pegar"))
+    PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Pick Up"))
     PromptSetEnabled(prompt, true)
     PromptSetVisible(prompt, true)
     PromptSetHoldMode(prompt, true)
