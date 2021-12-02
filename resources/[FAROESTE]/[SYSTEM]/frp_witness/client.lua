@@ -186,7 +186,7 @@ function addWitness(entity, crime)
                                         true
                                     )
 
-                                    cAPI.notify("alert", "Você foi denunciado!")
+                                    cAPI.notify("alert", "You have been reported!")
                                 end
 
                                 removeWitness(entity)
@@ -394,6 +394,6 @@ function GetCurrentTownName()
     elseif town_hash == GetHashKey("Manicato") then
         return "Manicato"
     elseif town_hash == false then
-        return "Cidade Fantasma"
+        return "Ghost town"
     end
 end
