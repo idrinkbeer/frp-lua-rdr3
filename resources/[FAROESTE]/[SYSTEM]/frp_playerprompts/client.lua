@@ -128,7 +128,7 @@ Citizen.CreateThread(
 
                 local entity
                 local isAPlayer = false
-                local name = "Pessoa Desconhecida"
+                local name = "Stranger"
 
                 -- isAPlayer = true
 
