@@ -86,7 +86,7 @@ AddEventHandler(
             dropPopulation[index] = nil
             dropPopulation_serveronly[index] = nil
 
-            API.logs("./savedata/inventory.txt",  os.date() .. " | [PLAYER/GET DROP]: " .. Character:getId() .. " pegou no chão " .. itemAmount .. "x" .. itemId)
+            API.logs("./savedata/inventory.txt",  os.date() .. " | [PLAYER/GET DROP]: " .. Character:getId() .. " picked up on the ground " .. itemAmount .. "x" .. itemId)
 
             TriggerClientEvent("FRP:INVENTORY:DROP:Delete", -1, index)
 
@@ -94,7 +94,7 @@ AddEventHandler(
                 User:notify("item", itemId, itemAmount)
             end
         else
-            User:notify("error", "Aforje sem espaço!")
+            User:notify("error", "No space!")
         end
     end
 )
@@ -213,7 +213,7 @@ AddEventHandler(
             dropPopulation[index] = d
             dropPopulation_serveronly[index] = d_serveronly
 
-            API.logs("./savedata/inventory.txt",  os.date() .. " | [PLAYER/DROP ITEM]: " .. User:getCharacter():getId() .. " largou no chão " .. itemAmount .. "x" .. itemId)
+            API.logs("./savedata/inventory.txt",  os.date() .. " | [PLAYER/DROP ITEM]: " .. User:getCharacter():getId() .. " dropped on the floor " .. itemAmount .. "x" .. itemId)
 
 
             TriggerClientEvent("FRP:INVENTORY:DROP:Create", -1, index, x, y, z, itemId, itemAmount)
@@ -222,7 +222,7 @@ AddEventHandler(
                 User:notify("item", itemId, -(itemAmount))
             end
         else
-            User:notify("error", "x" .. itemAmount .. " " .. itemData:getName() .. " não encontrado no inventário")
+            User:notify("error", "x" .. itemAmount .. " " .. itemData:getName() .. " not found in inventory")
         end
     end
 )
@@ -257,7 +257,7 @@ AddEventHandler(
         local Inventory = Character:getInventory()
 
         if Inventory:getItemAmount(itemId) < itemAmount then
-            User:notify("error", "Você não tem items suficientes")
+            User:notify("error", "you don't have enough items")
             return
         end
 
@@ -268,10 +268,10 @@ AddEventHandler(
 
             if UserTarget:getPrimaryInventoryViewing() == nil then
                 UserTarget:notify("item", itemId, itemAmount)
-            API.logs("./savedata/inventory.txt",  os.date() .. " | [PLAYER/ENVIOU]: " .. Character:getId() .. " deu " .. itemAmount .. "x" .. itemId .. "para o " .. CharacterTarget:getId() )
+            API.logs("./savedata/inventory.txt",  os.date() .. " | [PLAYER/SENT]: " .. Character:getId() .. " gave " .. itemAmount .. "x" .. itemId .. "to " .. CharacterTarget:getId() )
             end
         else
-            User:notify("error", "Bolsa da pesssoa está sem espaço!")
+            User:notify("error", "The person is out of space!")
         end
     end
 )
@@ -312,7 +312,7 @@ AddEventHandler(
         end
 
         if (primaryInventory:getWeight() + (Slot:getItemData():getWeight() * itemAmount)) >= primaryInventory:getCapacity() then
-            User:notify("error", "Baú cheio!")
+            User:notify("error", "Chest full!")
             return
         end
 
@@ -358,7 +358,7 @@ AddEventHandler(
         end
 
         if (secondaryInventory:getWeight() + (Slot:getItemData():getWeight() * itemAmount)) >= secondaryInventory:getCapacity() then
-            User:notify("error", "Baú cheio!")
+            User:notify("error", "Chest full!")
             return
         end
 
