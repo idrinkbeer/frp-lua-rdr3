@@ -101,7 +101,7 @@ function InitiatePrompts()
     prompt = PromptRegisterBegin()
     prompt_group = GetRandomIntInRange(0, 0xffffff)
     PromptSetControlAction(prompt, 0xDFF812F9)
-    PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Abrir"))
+    PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Open"))
     PromptSetEnabled(prompt, true)
     PromptSetVisible(prompt, true)
     PromptSetHoldMode(prompt, true)
@@ -113,7 +113,7 @@ function InitiatePrompts()
 
     prompt_sell = PromptRegisterBegin()
     PromptSetControlAction(prompt_sell, 0x7F8D09B8)
-    PromptSetText(prompt_sell, CreateVarString(10, "LITERAL_STRING", "Vender"))
+    PromptSetText(prompt_sell, CreateVarString(10, "LITERAL_STRING", "Sell"))
     PromptSetEnabled(prompt_sell, true)
     PromptSetVisible(prompt_sell, false)
     PromptSetHoldMode(prompt_sell, true)
@@ -185,7 +185,7 @@ RegisterNUICallback(
         selected_prompt_group_name = CreateVarString(10, "LITERAL_STRING", "x" .. GetItemSellAmount(selected_shopId, selected_itemId) .. " " .. ItemList[selected_itemId].name)
 
         PromptSetVisible(prompt_sell, true)
-        PromptSetText(prompt_sell, CreateVarString(10, "LITERAL_STRING", "Vender"))
+        PromptSetText(prompt_sell, CreateVarString(10, "LITERAL_STRING", "Sell"))
     end
 )
 
