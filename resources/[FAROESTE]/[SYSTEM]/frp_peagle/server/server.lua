@@ -25,7 +25,7 @@ RegisterCommand(
     local item = Inventory:getItemAmount("pigeonpost") 
   
     if item > 0 then
-      local IdTarget = cAPI.prompt(_source, "ID do Destinatário:", "")
+      local IdTarget = cAPI.prompt(_source, "Recipient ID:", "")
     
       if IdTarget == "" then
           return
@@ -35,7 +35,7 @@ RegisterCommand(
       
       local tplayer = API.getUserFromUserId(parseInt(tonumber(IdTarget))):getSource()
     
-      local Mensagem = cAPI.prompt(_source, "Mensagem:", "")
+      local Mensagem = cAPI.prompt(_source, "Message:", "")
     
       if Mensagem == "" then
           return
@@ -44,7 +44,7 @@ RegisterCommand(
       TriggerClientEvent("FRP:PEAGLE:GetCoords", _source, tplayer, Mensagem)
       Inventory:removeItem("pigeonpost", 1)
     else
-      TriggerClientEvent('FRP:TOAST:New', _source, "error", "Você não pussi uma pombo correio.")
+      TriggerClientEvent('FRP:TOAST:New', _source, "error", "You didn't have a carrier pigeon.")
     end
       --TriggerEvent("FRP:PEAGLE:newNote", -1, Mensagem, "CART"..idcart)
 end)
@@ -62,7 +62,7 @@ AddEventHandler("FRP:PEAGLE:SendMessage", function(source)
 
   Wait(1000)
 
-  local IdTarget = cAPI.prompt(_source, "ID do Destinatário:", "")
+  local IdTarget = cAPI.prompt(_source, "Recipient ID:", "")
 
   if IdTarget == "" then
       return
@@ -72,7 +72,7 @@ AddEventHandler("FRP:PEAGLE:SendMessage", function(source)
   
   local tplayer = API.getUserFromUserId(tonumber(IdTarget)):getSource()
 
-  local Mensagem = cAPI.prompt(_source, "Mensagem:", "")
+  local Mensagem = cAPI.prompt(_source, "Message:", "")
 
   if Mensagem == "" then
       return
