@@ -14,7 +14,7 @@ local spotPool = {
 local closestSpotIndex
 
 local prompt
-local prompt_name = CreateVarString(10, "LITERAL_STRING", "Bando")
+local prompt_name = CreateVarString(10, "LITERAL_STRING", "Posse")
 
 Citizen.CreateThread(
     function()
@@ -87,7 +87,7 @@ function InitiatePrompts()
 
     prompt = PromptRegisterBegin()
     PromptSetControlAction(prompt, 0xE8342FF2)
-    PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Criar Bando"))
+    PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Create Posse"))
     PromptSetEnabled(prompt, true)
     PromptSetVisible(prompt, true)
     PromptSetHoldMode(prompt, true)
