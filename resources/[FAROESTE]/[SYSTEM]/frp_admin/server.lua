@@ -28,7 +28,7 @@ RegisterCommand(
         if Character:hasGroupOrInheritance("admin") then
             cAPI.toggleNoclip(source)
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -42,7 +42,7 @@ RegisterCommand(
             local x, y, z = cAPI.getPosition(source)
             cAPI.SetPlayerPosition(source, x, y, z)
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -59,7 +59,7 @@ RegisterCommand(
                 cAPI.SetPlayerPosition(tplayer, x, y, z)
             end
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -77,10 +77,10 @@ RegisterCommand(
                     cAPI.SetPlayerPosition(source, cAPI.getPosition(tplayer))
                 end
             else
-                User:notify("error", "Usuário não encontrado!")
+                User:notify("error", "User not found!")
             end
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -91,7 +91,7 @@ RegisterCommand(
         local User = API.getUserFromSource(source)
         local Character = User:getCharacter()
         if Character:hasGroupOrInheritance("admin") then
-            local fcoords = cAPI.prompt(source, "Cordenadas:", "")
+            local fcoords = cAPI.prompt(source, "Coordinates:", "")
             if fcoords == "" then
                 return
             end
@@ -101,7 +101,7 @@ RegisterCommand(
             end
             cAPI.SetPlayerPosition(source, coords[1] or 0, coords[2] or 0, coords[3] or 0)
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -114,7 +114,7 @@ RegisterCommand(
         if Character:hasGroupOrInheritance("admin") then
             cAPI.TeleportPlayerToWaypoint(source)
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -127,12 +127,12 @@ RegisterCommand(
         if Character:hasGroupOrInheritance("admin") and args[1] then
             local sourcePlayer = API.getUserFromUserId(parseInt(args[1])):getSource()
             if args[2] ~= nil then
-                API.setBanned(sourcePlayer, args[1], "Banido por " .. table.concat(args, " ", 2))
+                API.setBanned(sourcePlayer, args[1], "Banned by " .. table.concat(args, " ", 2))
             else
-                API.setBanned(sourcePlayer, args[1], "Banido")
+                API.setBanned(sourcePlayer, args[1], "Banned")
             end
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -159,7 +159,7 @@ RegisterCommand(
                 API.setBanned(User, args[1])
             end
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -171,9 +171,9 @@ RegisterCommand(
         local Character = User:getCharacter()
         if Character:hasGroupOrInheritance("admin") and args[1] then
             local sourcePlayer = API.getUserFromUserId(parseInt(args[1])):getSource()
-            API.kick(sourcePlayer, "Você foi expulso da cidade.")
+            API.kick(sourcePlayer, "You were kicked! don't be a dick!")
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -186,7 +186,7 @@ RegisterCommand(
         if Character:hasGroupOrInheritance("admin") then
             cAPI.toggleInvinsible(source)
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -200,10 +200,10 @@ RegisterCommand(
             local UserTarget = API.getUserFromUserId(tonumber(args[1]))
             if UserTarget ~= nil then
                 UserTarget:getCharacter():varyExp(tonumber(args[2]))
-                TriggerClientEvent("chatMessage", source, args[2] .. " XP adicionado ao jogador " .. UserTarget:getCharacter():getName())
+                TriggerClientEvent("chatMessage", source, args[2] .. " XP added to player " .. UserTarget:getCharacter():getName())
             end
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -217,10 +217,10 @@ RegisterCommand(
             local UserTarget = API.getUserFromUserId(tonumber(args[1]))
             if UserTarget ~= nil then
                 UserTarget:getCharacter():varyExp(-(tonumber(args[2])))
-                TriggerClientEvent("chatMessage", source, args[2] .. " XP removido ao jogador " .. UserTarget:getCharacter():getName())
+                TriggerClientEvent("chatMessage", source, args[2] .. " XP removed from player " .. UserTarget:getCharacter():getName())
             end
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -233,7 +233,7 @@ RegisterCommand(
         if Character:hasGroupOrInheritance("admin") then
             TriggerClientEvent("FRP:ADMIN:CreateVehicle", source, args[1])
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -249,7 +249,7 @@ RegisterCommand(
                 UserTarget:getCharacter():setLevel(tonumber(args[2]))
             end
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -261,7 +261,7 @@ RegisterCommand(
         local Character = User:getCharacter()
 
         if #args < 2 and not tonumber(args[2]) then
-            User:notify("error", "sintaxe: /item id quantidade")
+            User:notify("error", "syntax: /item id amount")
             return
         end
 
@@ -274,19 +274,19 @@ RegisterCommand(
                         CharacterTarget:getInventory():addItem(args[2], tonumber(args[3]))
                         API.logs("./savedata/giveitem.txt",  os.date() .. " | [AdminID]: " .. Character:getId() .. " / [TargetID]: " .. CharacterTarget:getId() .. " [FUNÇÃO]: AddItem / [NOME]: " .. args[2] .. " / Quantidade " .. tonumber(args[3]))
                     else
-                        User:notify("error", "Usuario não escolheu um personagem ainda!")
+                        User:notify("error", "User hasn't chosen a character yet!")
                     end
                 else
-                    User:notify("error", "Usuario invalido!")
+                    User:notify("error", "Invalid User!")
                 end
             else
                 if #args == 2 then
                     Character:getInventory():addItem(args[1], tonumber(args[2]))
-                    API.logs("./savedata/giveitem.txt", os.date() .. " | [AdminID]: " .. Character:getId() .. " / [TargetID]: " .. args[1] .. " [FUNÇÃO]: AddItem / [NOME]: " .. args[1] .. " / Quantidade " .. tonumber(args[2]))
+                    API.logs("./savedata/giveitem.txt", os.date() .. " | [AdminID]: " .. Character:getId() .. " / [TargetID]: " .. args[1] .. " [FUNCTION]: AddItem / [NOME]: " .. args[1] .. " / Amount " .. tonumber(args[2]))
                 end
             end
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -298,7 +298,7 @@ RegisterCommand(
         local Character = User:getCharacter()
 
         if #args < 2 and not tonumber(args[2]) then
-            User:notify("error", "sintaxe: /item id quantidade")
+            User:notify("error", "syntax: /item id amount")
             return
         end
 
@@ -310,10 +310,10 @@ RegisterCommand(
                     if CharacterTarget ~= nil then
                         CharacterTarget:getInventory():addItem(args[2], tonumber(args[3]))
                     else
-                        User:notify("error", "Usuario não escolheu um personagem ainda!")
+                        User:notify("error", "User hasn't chosen a character yet!")
                     end
                 else
-                    User:notify("error", "Usuario invalido!")
+                    User:notify("error", "Invalid User!")
                 end
             else
                 if #args == 2 then
@@ -321,7 +321,7 @@ RegisterCommand(
                 end
             end
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -340,7 +340,7 @@ RegisterCommand(
             if Character:hasGroupOrInheritance("admin") then
                 cAPI.SetPlayerPed(source, args[1])
             else
-                User:notify("error", "Você não tem permissão!")
+                User:notify("error", "You do not have permission!")
             end
         end
     end
@@ -353,9 +353,9 @@ RegisterCommand(
         local Character = User:getCharacter()
         if Character:hasGroupOrInheritance("admin") then
             local x, y, z = cAPI.getPosition(source)
-            API.prompt(source, "Cordenadas:", string.format("%.3f", x) .. "," .. string.format("%.3f", y) .. "," .. string.format("%.3f", z))
+            API.prompt(source, "Coordinates:", string.format("%.3f", x) .. "," .. string.format("%.3f", y) .. "," .. string.format("%.3f", z))
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -374,13 +374,13 @@ RegisterCommand(
                     elseif args[1] == "remove" then
                         UserTarget:getCharacter():removeGroup(args[3])
                     end
-                    API.logs("./savedata/group.txt",  os.date() .. " | [AdminID]: " .. Character:getId() .. " / [TargetID]: " .. args[2] .. " [FUNÇÃO]: ".. args[1] , args[3])
+                    API.logs("./savedata/group.txt",  os.date() .. " | [AdminID]: " .. Character:getId() .. " / [TargetID]: " .. args[2] .. " [FUNCTION]: ".. args[1] , args[3])
                 else
-                    User:notify("error", "Usuario invalido!")
+                    User:notify("error", "Invalid User!")
                 end
             end
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -396,10 +396,10 @@ RegisterCommand(
                 local UserTarget = API.getUserFromUserId(tonumber(args[1]))
                 UserTarget:getCharacter():addGroup("trooper")
             else
-                User:notify("error", "Usuario invalido!")
+                User:notify("error", "Invalid User!")
             end
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -414,10 +414,10 @@ RegisterCommand(
                 local UserTarget = API.getUserFromUserId(tonumber(args[1]))
                 UserTarget:getCharacter():removeGroup("trooper")
             else
-                User:notify("error", "Usuario invalido!")
+                User:notify("error", "Invalid User!")
             end
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -429,9 +429,9 @@ RegisterCommand(
         local Character = User:getCharacter()
         local PoliceON = API.getUsersByGroup("trooper")
         if #PoliceON <= 0 then
-            User:notify("alert", "Não há Oficiais, em serviço!")
+            User:notify("alert", "There are no officers on duty!")
         end
-        User:notify("alert", "No momento há " .. #PoliceON .. " Oficiais, em serviço!")
+        User:notify("alert", "At the moment there is " .. #PoliceON .. " Officers, on duty!")
     end
 )
 
@@ -444,7 +444,7 @@ RegisterCommand(
             local random = math.random(1, 6)
             TriggerEvent("TREASURE:create", random)
         else
-            User:notify("error", "Você não tem permissão!")
+            User:notify("error", "You do not have permission!")
         end
     end
 )
@@ -489,7 +489,7 @@ RegisterCommand(
                     TriggerClientEvent("FRP:ADMIN:SpawnPed", source, args[1])
                 end
             else
-                User:notify("error", "Você não tem permissão!")
+                User:notify("error", "You do not have permission!")
             end
         end
     end
@@ -504,7 +504,7 @@ RegisterCommand(
             if Character:hasGroupOrInheritance("admin") then
                 TriggerClientEvent("FRP:ADMIN:SpawnObject", source, args[1])
             else
-                User:notify("error", "Você não tem permissão!")
+                User:notify("error", "You do not have permission!")
             end
         end
     end
@@ -523,7 +523,7 @@ RegisterCommand(
                 if tplayer ~= nil then
                     TriggerClientEvent("FRP:RESPAWN:revive", tplayer)
 
-                    API.logs("./savedata/revive.txt",  os.date() .. " | [AdminID]: " .. Character:getId() .. " / [TargetID]: " .. args[1] .. " [FUNÇÃO]: REVIVE")
+                    API.logs("./savedata/revive.txt",  os.date() .. " | [AdminID]: " .. Character:getId() .. " / [TargetID]: " .. args[1] .. " [FUNCTION]: REVIVE")
                 end
             else
                 TriggerClientEvent("FRP:RESPAWN:revive", _source)
