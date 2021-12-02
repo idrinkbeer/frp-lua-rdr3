@@ -89,7 +89,7 @@ AddEventHandler(
 )
 
 RegisterCommand(
-    "pagar",
+    "pay",
     function(source, args)
         local playersend
         tonumber(args[1])
@@ -98,7 +98,7 @@ RegisterCommand(
         if amount ~= nil and playersend ~= nil then
             TriggerServerEvent("FRP:BANKING:sendmoney", source, playersend, amount)
         else
-            TriggerClientEvent("chat:addMessage", source, {args = {"^1SYSTEMA", "ID ou Valor Inválido."}})
+            TriggerClientEvent("chat:addMessage", source, {args = {"^1SYSTEM", "Invalid ID or Value."}})
         end
     end
 )
@@ -117,7 +117,7 @@ AddEventHandler(
         local tname = tplayer:getName()
         if amount ~= nil then
             if _amount == nil or _amount <= 0 or _amount > tonumber(call) then
-                User:notify("error", "Quantia inválida!")
+                User:notify("error", "Invalid amount!")
                 return
             else
                 Character:setData(Character:getId(), "metaData", "banco", tonumber(call - (amount * 100)))
@@ -126,7 +126,7 @@ AddEventHandler(
                 User:notify("item", "money", -(amount))
                 Wait(500)
                 TriggerClientEvent("FRP:BANKING:sendmoney", tplayer, amount, name)
-                TriggerClientEvent("chatMessage", source, "^1SISTEMA", {255, 255, 255}, "Você deu " .. amount * 100 .. " para " .. tname .. "")
+                TriggerClientEvent("chatMessage", source, "^1SYSTEM", {255, 255, 255}, "You gave $" .. amount * 100 .. " to " .. tname .. "")
             end
         end
     end
@@ -144,7 +144,7 @@ AddEventHandler(
 
         if Character ~= nil then
             Inventory:addItem("money", amount * 100)
-            TriggerClientEvent("chatMessage", source, "^1SISTEMA", {255, 255, 255}, "Você recebeu $" .. amount * 100 .. " de " .. _name .. "")
+            TriggerClientEvent("chatMessage", source, "^1SYSTEM", {255, 255, 255}, "You received $" .. amount * 100 .. " from " .. _name .. "")
         end
     end
 )
