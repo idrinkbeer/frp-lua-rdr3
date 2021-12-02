@@ -111,7 +111,7 @@ Citizen.CreateThread(
                             table.remove(cJSON[string_model], entityIndex)
                         end
 
-                        cAPI.notify("success", "Entidade removida!")
+                        cAPI.notify("success", "Entity removed!")
                     end
 
                     DeleteMyEntity()
@@ -216,7 +216,7 @@ RegisterCommand(
         local modelHash = tonumber(model) == nil and model or tonumber(model)
 
         if not IsModelValid(modelHash) then
-            cAPI.notify("error", "LootPlace: Model invalido!")
+            cAPI.notify("error", "LootPlace: Invalid model!")
             return
         end
 
@@ -234,7 +234,7 @@ RegisterCommand(
     function(source, args, raw)
         WriteToOutput()
 
-        cAPI.notify("success", "LootPlace: Novos items salvos!")
+        cAPI.notify("success", "LootPlace: New saved items!")
     end,
     false
 )
