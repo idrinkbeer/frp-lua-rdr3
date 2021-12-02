@@ -163,9 +163,9 @@ window.addEventListener("message", function(event) {
         }
 
         if (!$('#secondary').is(":hidden")) {
-            $(".helper").html("Basta arrastar o item ao proximo inventário para despejar.");
+            $(".helper").html("Just drag the item to the next inventory to dump.");
         } else {
-            $(".helper").html("Siga as legendas apresentadas no canto inferior direito.");
+            $(".helper").html("Follow the subtitles displayed in the lower right corner.");
         }
     }
 });
