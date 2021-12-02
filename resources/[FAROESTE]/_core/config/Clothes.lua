@@ -1,18 +1,18 @@
 Clothes = {
     ["chapeu"] = {
-        name = "hat",
+        name = "hats",
         hash = 0x9925C067
     },
     ["camisa"] = {
-        name = "shirt",
+        name = "shirts",
         hash = 0x2026C46D
     },
     ["colete"] = {
-        name = "vest",
+        name = "vests",
         hash = 0x485EE834
     },
     ["casaco"] = {
-        name = "coat",
+        name = "coats",
         hash = 0x662AC34
     },
     ["calca"] = {
@@ -20,7 +20,7 @@ Clothes = {
         hash = 0x1D4C528A
     },
     ["mascara"] = {
-        name = "mask",
+        name = "masks",
         hash = 0x7505EF42
     },
     ["botas"] = {
