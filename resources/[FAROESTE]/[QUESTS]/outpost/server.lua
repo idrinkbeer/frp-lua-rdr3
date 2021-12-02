@@ -66,7 +66,7 @@ AddEventHandler("OutPost:InvadeOutpostAlert", function()
     local outPostClosest = OutPost.GetOutPostLocation(vec3(x, y, z))
     if outPostClosest ~= nil and outPostClosest.org_id ~= nil and outPostClosest.org_id > 0 then
         print("NotifyUsersOrg")
-        API.NotifyUsersOrg(outPostClosest.org_id, "OutPost do tipo " .. outPostClosest.type .. " está sendo invadido!")
+        API.NotifyUsersOrg(outPostClosest.org_id, "OutPost of type " .. outPostClosest.type .. " is being invaded!")
     end
 end)
 
