@@ -70,19 +70,19 @@ AddEventHandler(
         local Inventory = Character:getInventory()
 
         if #Horses >= 1 then
-            TriggerClientEvent('FRP:NOTIFY:Simple', _source, 'Limite de estabulo alcançado!', 5000)
+            TriggerClientEvent('FRP:NOTIFY:Simple', _source, 'Stable limit reached!', 5000)
             return
         end
 
         if data.IsGold then
             if Inventory:getItemAmount("gold") < data.Gold*100 then
-                TriggerClientEvent('FRP:NOTIFY:Simple', _source, 'Gold insuficiente!', 5000)
+                TriggerClientEvent('FRP:NOTIFY:Simple', _source, 'Insufficient Gold!', 5000)
                 return
             end
             Inventory:removeItem(-1, "gold", data.Gold*100)
         else
             if Inventory:getItemAmount("money") < data.Dollar*100 then
-                TriggerClientEvent('FRP:NOTIFY:Simple', _source, 'Dollar insuficiente!', 5000)
+                TriggerClientEvent('FRP:NOTIFY:Simple', _source, 'Insufficient Money!', 5000)
                 return
             end
             Inventory:removeItem(-1, "money", data.Dollar*100)
@@ -106,7 +106,7 @@ AddEventHandler(
         
         local Horse = Character:getHorse()
         
-        TriggerClientEvent('FRP:NOTIFY:Simple', _source, 'Cavalo selecionado', 5000)
+        TriggerClientEvent('FRP:NOTIFY:Simple', _source, 'Selected horse', 5000)
     end
 )
 
@@ -122,11 +122,11 @@ AddEventHandler(
         local Horse = Character:getHorse()
 
         if Horse == nil then            
-            TriggerClientEvent('FRP:NOTIFY:Simple', _source, 'Você já vendeu este cavalo.', 5000)
+            TriggerClientEvent('FRP:NOTIFY:Simple', _source, 'You already sold this horse', 5000)
             return
         end
 
-        TriggerClientEvent('FRP:NOTIFY:Simple', _source, 'Cavalo vendido com sucesso.', 5000)  
+        TriggerClientEvent('FRP:NOTIFY:Simple', _source, 'Horse successfully sold.', 5000)  
 
         Character:removeHorse(tonumber(id))
         Character:deleteHorse(tonumber(id))
