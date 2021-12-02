@@ -58,7 +58,7 @@ function InitiateHorse(atCoords)
 
         if horseModel == nil and horseName == nil then
             horseModel = "A_C_Horse_MP_Mangy_Backup"
-            horseName = "Pangaré"
+            horseName = "Prince"
         end
     end
 
@@ -337,7 +337,7 @@ function WhistleHorse(whistleTypeHash)
             -- InitiateHorse(GetOffsetFromEntityInWorldCoords(PlayerPedId(), 1.0, 1.0, 0.0))
             InitiateHorse()
         else
-            cAPI.notify("error", "Seu cavalo está ferido, aguarde 2 minutos.")
+            cAPI.notify("error", "Your horse is injured, wait 2 minutes.")
         end
     end
 end
@@ -377,7 +377,7 @@ function CreatePrompts(prompt_group)
     
     prompt_inventory = PromptRegisterBegin()
     PromptSetControlAction(prompt_inventory, 0x5966D52A)
-    PromptSetText(prompt_inventory, CreateVarString(10, "LITERAL_STRING", "Abrir Aforje"))
+    PromptSetText(prompt_inventory, CreateVarString(10, "LITERAL_STRING", "Open SaddleBags"))
     PromptSetEnabled(prompt_inventory, 1)
     PromptSetVisible(prompt_inventory, 1)
     PromptSetStandardMode(prompt_inventory, 1)
@@ -387,7 +387,7 @@ function CreatePrompts(prompt_group)
 
     prompt_eat = PromptRegisterBegin()
     PromptSetControlAction(prompt_eat, 0xB4E465B4)
-    PromptSetText(prompt_eat, CreateVarString(10, "LITERAL_STRING", "Mandar Pastar"))
+    PromptSetText(prompt_eat, CreateVarString(10, "LITERAL_STRING", "Graze"))
     PromptSetEnabled(prompt_eat, 1)
     PromptSetVisible(prompt_eat, 0)
     PromptSetStandardMode(prompt_eat, 1)
@@ -399,7 +399,7 @@ function CreatePrompts(prompt_group)
 
     prompt_drink = PromptRegisterBegin()
     PromptSetControlAction(prompt_drink, 0xEB2AC491)
-    PromptSetText(prompt_drink, CreateVarString(10, "LITERAL_STRING", "Mandar Beber"))
+    PromptSetText(prompt_drink, CreateVarString(10, "LITERAL_STRING", "Drink"))
     PromptSetEnabled(prompt_drink, 1)
     PromptSetVisible(prompt_drink, 0)
     PromptSetStandardMode(prompt_drink, 1)
@@ -409,7 +409,7 @@ function CreatePrompts(prompt_group)
 
     prompt_brush = PromptRegisterBegin()
     PromptSetControlAction(prompt_brush, 0x9959A6F0)
-    PromptSetText(prompt_brush, CreateVarString(10, "LITERAL_STRING", "Escovar"))
+    PromptSetText(prompt_brush, CreateVarString(10, "LITERAL_STRING", "Brush"))
     PromptSetEnabled(prompt_brush, 1)
     PromptSetVisible(prompt_brush, 1)
     PromptSetStandardMode(prompt_brush, 1)
