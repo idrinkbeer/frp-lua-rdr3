@@ -81,7 +81,7 @@ AddEventHandler(
 
         if data.group then
             if not Character:hasGroupOrInheritance(data.group) then
-                User:notify("error", "Você não tem permissao")
+                User:notify("error", "You do not have permission")
                 return
             end
         end
@@ -107,9 +107,9 @@ AddEventHandler(
 
         if Inventory:getItemAmount(currencyItem) < itemPrice then
             if currencyItem == "money" then
-                User:notify("error", "Doláres insuficientes")
+                User:notify("error", "Insufficient Money")
             else
-                User:notify("error", "Ouros insuficientes")
+                User:notify("error", "Insufficient Gold")
             end
             return
         end
@@ -127,7 +127,7 @@ AddEventHandler(
             end
             User:notify("item", itemId, itemAmount or 1)
         else
-            User:notify("error", "Espaço insuficiente na bolsa!")
+            User:notify("error", "Insufficient Space!")
         end
     end
 )
