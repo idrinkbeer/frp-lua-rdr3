@@ -258,7 +258,7 @@ Citizen.CreateThread(
             if cAPI.IsPlayerHorseActive() then
                 if not isHorseActivationBlocked then
                     if IsPedInjured(playerHorse) then
-                        cAPI.notify("error", "Seu cavalo foi ferido, você não poderá chama-lo nos proximos 2 minutos")
+                        cAPI.notify("error", "Your horse has been injured, you will not be able to call him/her for the next 2 minutes")
                         isHorseActivationBlocked = true
                         horseActivationSeconds = 120
                     end
@@ -318,7 +318,7 @@ Citizen.CreateThread(
                 end
             else
                 if IsPedInWrithe(playerHorse) then
-                    cAPI.notify("alert", "Seu cavalo foi ferido, reanime-o")
+                    cAPI.notify("alert", "Your horse has been wounded, heal him")
                     isHorseInWrithe = true
                 else
                     if #(GetEntityCoords(PlayerPedId()) - GetEntityCoords(playerHorse)) > 500.0 then
@@ -439,7 +439,7 @@ Citizen.CreateThread(
 
             if diff > 1 then
                 if isWanted then
-                    DrawText("Você está procurado por " .. string.format("%.0f", math.max(diff / 1000, 0)) .. " segundos", 0.925, 0.96, 0.25, 0.25, false, 255, 255, 255, 145, 1, 7)
+                    DrawText("You are wanted for " .. string.format("%.0f", math.max(diff / 1000, 0)) .. " seconds", 0.925, 0.96, 0.25, 0.25, false, 255, 255, 255, 145, 1, 7)
                 end
             else
                 if isWanted then
