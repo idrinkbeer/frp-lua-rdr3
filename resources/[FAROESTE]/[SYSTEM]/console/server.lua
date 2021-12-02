@@ -26,9 +26,9 @@ commands.addwhitelist = function(source, args)
 
     if userId then
         if API.setAsWhitelisted(userId, true) then
-            commands.print(source, name .. " [" .. userId .. "] Adicionado a whitelist!")
+            commands.print(source, name .. " [" .. userId .. "] Added to whitelist!")
         else
-            commands.print(source, name .. " [" .. userId .. "] Já possui whitelist")
+            commands.print(source, name .. " [" .. userId .. "] Already in whitelist")
         end
     else
         commands.print(source, "Syntax: addwhitelist <userId>")
@@ -40,9 +40,9 @@ commands.removewhitelist = function(source, args)
 
     if userId then
         if API.setAsWhitelisted(userId, false) then
-            commands.print(source, name .. " [" .. userId .. "] Removido da whitelist!")
+            commands.print(source, name .. " [" .. userId .. "] Remove from whitelist!")
         else
-            commands.print(source, name .. " [" .. userId .. "] Não possui whitelist")
+            commands.print(source, name .. " [" .. userId .. "] Not in whitelist")
         end
     else
         commands.print(source, "Syntax: removewhitelist <userId>")
@@ -52,7 +52,7 @@ end
 commands.players = function(source, args)
     local users = API.getUsers()
 
-    commands.print(source, "Conectados " .. #users .. "/32")
+    commands.print(source, "Connected " .. #users .. "/32")
 
     listusers(source, users)
 end
@@ -63,7 +63,7 @@ commands.playersbygroup = function(source, args)
     if group then
         local users = API.getUsersByGroup(group)
 
-        commands.print(source, "Conectados " .. #users .. "/32 GRUPO: " .. group)
+        commands.print(source, "Connected " .. #users .. "/32 GROUP: " .. group)
 
         listusers(source, users)
     end
@@ -74,7 +74,7 @@ commands.setpriority = function(source, args)
     local priority = tonumber(args[2])
 
     if user_id and priority then
-        commands.print(source, "Prioridade para o usuário " .. user_id .. " agora é " .. priority)
+        commands.print(source, "Priority for the user " .. user_id .. " Now is " .. priority)
 
         if priority > 0 then
             dbAPI.execute("queue:set", {user_id = user_id, priority = priority, start = 0, ["end"] = 0})
