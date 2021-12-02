@@ -57,7 +57,7 @@ AddEventHandler(
 		if trooperjob == false then
 			TriggerEvent("FRP:SHERIFF:soltar", target)
 		else
-			TriggerClientEvent("chatMessage", source, "SISTEMA", {255, 255, 255}, "Você não é um oficial")
+			TriggerClientEvent("chatMessage", source, "SYSTEM", {255, 255, 255}, "You are not an officer")
 		end
 	end
 )
@@ -80,14 +80,14 @@ end)
  				TriggerClientEvent('FRP:WANTED:RewardClient', _source, args[1], args[2])
  			end
  		else
- 			TriggerClientEvent('chatMessage', source, 'SISTEMA', {255, 255, 255}, 'Você não é um oficial')
+ 			TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 255, 255}, 'You are not an officer')
 		end	
  end)
 
 
 
 RegisterCommand(
-	"colocar",
+	"puton",
 	function(source)
 		local source = source
 		TriggerEvent(
@@ -219,7 +219,7 @@ AddEventHandler(
 		User:viewInventory()
 		User:viewInventoryAsSecondary(InventoryTarget)
 
-		UserTarget:notify('alert', 'Você está sendo revistado!')
+		UserTarget:notify('alert', 'You are being searched!')
 	end
 )
 
@@ -235,7 +235,7 @@ AddEventHandler(
  			TriggerClientEvent('FRP:SHERIFF:cuffcheck', source)
  			handcuffs = true
  		else
- 			TriggerClientEvent('chatMessage', source, 'SISTEMA', {255, 255, 255}, 'Você não é um oficial')
+ 			TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 255, 255}, 'You are not an officer')
 		 end
 		 
  		if handcuffs == true then
@@ -256,7 +256,7 @@ RegisterCommand(
 			TriggerClientEvent("FRP:SHERIFF:nyckelcheck", source)			
 			handcuffs = true
 		else
-			TriggerClientEvent('chatMessage', source, 'SISTEMA', {255, 255, 255}, 'Você não é um oficial')
+			TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 255, 255}, 'You are not an officer')
 		end
 
 
@@ -278,7 +278,7 @@ RegisterCommand(
 		if trooperjob == true then			
 			TriggerClientEvent("FRP:SHERIFF:putinvehicle", source)
 		else
-			TriggerClientEvent('chatMessage', source, 'SISTEMA', {255, 255, 255}, 'Você não é um oficial')
+			TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 255, 255}, 'You are not an officer')
 		end
 	end
 )
@@ -294,7 +294,7 @@ RegisterCommand(
 		if trooperjob == true then			
 			TriggerClientEvent("FRP:SHERIFF:outvehicle", source)
 		else
-			TriggerClientEvent('chatMessage', source, 'SISTEMA', {255, 255, 255}, 'Você não é um oficial')
+			TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 255, 255}, 'You are not an officer')
 		end
 	end
 )
