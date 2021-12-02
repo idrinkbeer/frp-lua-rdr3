@@ -84,7 +84,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "c",
+    "clear",
     function(source)
         local ped = PlayerPedId()
         if not IsPlayerFreeAiming(ped) then
@@ -110,7 +110,7 @@ RegisterCommand(
 -- )
 
 RegisterCommand(
-    "anotar",
+    "Note",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_WRITE_NOTEBOOK"), 200000, false, false, false, false)
@@ -152,13 +152,13 @@ RegisterCommand(
                 Bandana = false
             end
         else
-            TriggerEvent("FRP:NOTIFY:Simple", "Você ainda está como procurado, não pode retirar a bandana. ", 10000)
+            TriggerEvent("FRP:NOTIFY:Simple", "You are wanted... ", 10000)
         end
     end
 )
 
 RegisterCommand(
-    "avomitar",
+    "vomit",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_VOMIT"), 100000, true, false, false, false)
@@ -166,7 +166,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "afumar",
+    "smoke",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_SMOKE"), -1, true, false, false, false)
@@ -174,7 +174,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "afumar2",
+    "smoke2",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_SMOKE_CIGAR"), -1, true, false, false, false)
@@ -182,7 +182,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "afumar3",
+    "smoke3",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_SMOKE_NERVOUS_STRESSED"), -1, true, false, false, false)
@@ -190,7 +190,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "afumar4",
+    "smoke4",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_SMOKE_INTERACTION"), -1, true, false, false, false)
@@ -198,7 +198,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "afumar5",
+    "smoke5",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_LEAN_RAILING_SMOKING"), 100000, true, false, false, false)
@@ -206,7 +206,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "abeber",
+    "drink",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_SIT_GROUND_DRINK_DRUNK"), 100000, true, false, false, false)
@@ -214,7 +214,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "alerjornal",
+    "newspaper",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_SIT_GROUND_READING_JOURNAL"), 100000, true, false, false, false)
@@ -222,7 +222,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "awhisky",
+    "whiskey",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_DRINK_FLASK"), 100000, true, false, false, false)
@@ -230,7 +230,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "ataca",
+    "champagne",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_DRINK_CHAMPAGNE"), 100000, true, false, false, false)
@@ -238,7 +238,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "acerveja",
+    "drink2",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_DRINKING_INTERACTION"), 100000, true, false, false, false)
@@ -246,7 +246,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "awhisky2",
+    "whisky2",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_DRINKING_DRUNK"), 100000, true, false, false, false)
@@ -254,7 +254,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "ajanela",
+    "clean",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_CLEAN_WINDOW"), 100000, true, false, false, false)
@@ -262,7 +262,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "amesa",
+    "clean2",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_CLEAN_TABLE"), 100000, true, false, false, false)
@@ -270,7 +270,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "apiano",
+    "piano",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("PROP_HUMAN_PIANO_RIVERBOAT"), 100000, true, false, false, false)
@@ -278,7 +278,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "adeitar",
+    "sleep",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_CAMP_JACK_ES_SLEEP"), 100000, true, false, false, false)
@@ -302,7 +302,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "asentar",
+    "sit",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("GENERIC_SIT_GROUND_SCENARIO"), -1, true, false, false, false)
@@ -310,7 +310,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "asentar2",
+    "sit2",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("PROP_CAMP_FIRE_SEATED"), -1, true, false, false, false)
@@ -318,7 +318,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "asentar3",
+    "sit3",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_PLAYER_CAMP_FIRE_SIT"), -1, true, false, false, false)
@@ -326,7 +326,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "ainspecionar",
+    "inspect",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("MP_LOBBY_WORLD_HUMAN_CROUCH_INSPECT"), -1, true, false, false, false)
@@ -334,7 +334,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "ainspecionar2",
+    "inspect2",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("MP_LOBBY_WORLD_HUMAN_CROUCH_INSPECT_MALE_A"), -1, true, false, false, false)
@@ -342,7 +342,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "astare",
+    "stare",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("MP_LOBBY_WORLD_HUMAN_STARE_STOIC"), -1, true, false, false, false)
@@ -350,7 +350,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "adormir",
+    "sleep2",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_SLEEP_GROUND_ARM"), -1, true, false, false, false)
@@ -358,7 +358,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "adormir2",
+    "sleep3",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_SLEEP_GROUND_PILLOW"), -1, true, false, false, false)
@@ -366,7 +366,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "acintura",
+    "toughguy",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_STERNGUY_IDLES"), -1, true, false, false, false)
@@ -374,7 +374,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "avarrer",
+    "sweep",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_STRAW_BROOM_WORKING"), -1, true, false, false, false)
@@ -382,7 +382,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "atrompete",
+    "trumpet",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_TRUMPET"), -1, true, false, false, false)
@@ -390,7 +390,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "abalcao",
+    "counter",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_VAL_BANKTELLER"), -1, true, false, false, false)
@@ -398,7 +398,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "aagachar",
+    "crouch",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_PLAYER_CAMP_FIRE_SQUAT"), -1, true, false, false, false)
@@ -406,7 +406,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "aencherbalde",
+    "fillbucket",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_PLAYER_CHORES_BUCKET_FILL"), -1, true, false, false, false)
@@ -414,7 +414,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "ajogaragua",
+    "pourbucket",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_PLAYER_CHORES_BUCKET_POUR_HIGH"), -1, true, false, false, false)
@@ -422,7 +422,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "alargarbalde",
+    "dropbucket",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_PLAYER_CHORES_BUCKET_PUT_DOWN_FULL"), -1, true, false, false, false)
@@ -430,7 +430,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "acomidadegalinha",
+    "feed",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_PLAYER_CHORES_FEED_CHICKENS"), -1, true, false, false, false)
@@ -438,7 +438,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "atest",
+    "concertina",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_CONCERTINA_PICKUP_NO_CONCERTINA"), -1, true, false, false, false)
@@ -446,7 +446,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "aesperando",
+    "impatient",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_WAITING_IMPATIENT"), -1, true, false, false, false)
@@ -454,7 +454,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "aviolao2",
+    "guitar",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_SIT_GUITAR_DOWNBEAT"), -1, true, false, false, false)
@@ -462,7 +462,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "acafenochao",
+    "coffee",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_SIT_GROUND_COFFEE_DRINK"), -1, true, false, false, false)
@@ -478,7 +478,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "aviolao",
+    "guitar2",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("PROP_HUMAN_SEAT_CHAIR_GUITAR"), 100000, true, false, false, false)
@@ -486,7 +486,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "afeno",
+    "dropbale",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_BALE_PUT_DOWN_1_MALE_A"), 100000, true, false, false, false)
@@ -494,7 +494,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "aespelho",
+    "mirror",
     function(source, args, rawCommand)
         local ped = Citizen.InvokeNative(0x275F255ED201B937, 0)
         Citizen.InvokeNative(0x524B54361229154F, PlayerPedId(), GetHashKey("WORLD_HUMAN_POCKET_MIRROR"), 100000, true, false, false, false)
@@ -502,7 +502,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "awhisky3",
+    "whisky3",
     function(source, args)
         local propEntity = CreateObject(GetHashKey("p_bottleJD01x"), GetEntityCoords(PlayerPedId()), false, true, false, false, true)
 
@@ -513,7 +513,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "achamps",
+    "champagne2",
     function(source, args)
         local propEntity = CreateObject(GetHashKey("p_glass001x"), GetEntityCoords(PlayerPedId()), false, true, false, false, true)
 
@@ -521,7 +521,7 @@ RegisterCommand(
     end
 )
 RegisterCommand(
-    "acerveja2",
+    "beer2",
     function(source, args)
         local propEntity = CreateObject(GetHashKey("p_bottleBeer01a"), GetEntityCoords(PlayerPedId()), false, true, false, false, true)
 
@@ -530,7 +530,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "acafe",
+    "cafe",
     function(source, args)
         local propEntity = CreateObject(GetHashKey("p_mugCoffee01x"), GetEntityCoords(PlayerPedId()), false, true, false, false, true)
 
@@ -539,7 +539,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "acomida",
+    "stew",
     function(source, args)
         local bowl = CreateObject("p_bowl04x_stew", GetEntityCoords(PlayerPedId()), true, true, false, false, true)
         local spoon = CreateObject("p_spoon01x", GetEntityCoords(PlayerPedId()), true, true, false, false, true)
@@ -557,7 +557,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "afeno2",
+    "pickupbale",
     function(source, args, rawCommand)
         local model = "p_haybale03x"
         if IsModelValid(model) then
@@ -603,20 +603,20 @@ local groups = {
     {
         -- name = "Emotes",
         actions = {
-            {"Acenar", -339257980},
-            {"Tirar o Chapéu", -1457020913},
-            {"Acenar com a Cabeça", -822629770},
-            {"Cuspir", -2106738342}
+            {"Wave", -339257980},
+            {"Tip Hat", -1457020913},
+            {"Nod", -822629770},
+            {"Spit", -2106738342}
         }
         -- prompt_group
     },
     {
         -- name = "Emotes",
         actions = {
-            {"Siga-me", 1115379199},
-            {"HissyFit", 796723886},
-            {"Apontar", 486225122},
-            {"Mandar Biejo", 1927505461}
+            {"Follow Me", 1115379199},
+            {"Hissy Fit", 796723886},
+            {"Point", 486225122},
+            {"Send Kiss", 1927505461}
         }
         -- prompt_group
     }
