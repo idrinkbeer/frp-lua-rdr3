@@ -3,7 +3,7 @@ Config = {}
 Config.Stables = {
 	Valentine = {	   
 		Pos = {x=-367.73, y=787.72, z=116.26},
-		Name = 'Estábulo',
+		Name = 'Stable',
         Heading = -30.65,
 		SpawnPoint = {
 			Pos = {x=-372.43, y=791.79, z=116.13},
@@ -13,7 +13,7 @@ Config.Stables = {
 	},
 	BlackWater = {
 		Pos = {x=-873.167, y=-1366.040, z=43.531},
-		Name = 'Estábulo',
+		Name = 'Stable',
         Heading = 266.84,
 		SpawnPoint = {
 			Pos = {x=-864.373, y=-1361.485, z=43.702},
@@ -23,7 +23,7 @@ Config.Stables = {
     },
 	Saint_Denis = {
 		Pos = {x=2503.153, y=-1442.725, z=46.312},
-		Name = 'Estábulo',
+		Name = 'Stable',
         Heading = 169.45,
 		SpawnPoint = {
 			Pos = {x=2508.822, y=-1449.949, z=46.402},
