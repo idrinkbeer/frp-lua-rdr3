@@ -19,7 +19,7 @@ AddEventHandler(
 
         if amount ~= nil then
             if _amount == nil or _amount <= 0 or _amount > tonumber(call) then
-                User:notify("error", "Quantia inválida!")
+                User:notify("error", "Invalid amount!")
                 return
             else
                 Character:setData(Character:getId(), "metaData", "banco", tonumber(call - (amount * 100)))
@@ -48,7 +48,7 @@ AddEventHandler(
         local call = json.decode(Character:getData(Character:getId(), "metaData", "banco"))
         if amount ~= nil then
             if _amount == nil or _amount <= 0 or _amount > Inventory:getItemAmount("money") then
-                User:notify("error", "Quantia inválida!")
+                User:notify("error", "Invalid amount!")
                 return
             else
                 Character:setData(Character:getId(), "metaData", "banco", tonumber(call + (amount * 100)))
