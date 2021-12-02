@@ -1,7 +1,7 @@
 Config = {}
 
-Config.NoMoney = 'Não tem dinheiro suficiente $'
-Config.Shoptext = 'Aperte (E) para abrir o menu'
+Config.NoMoney = 'don\'t have enough money'
+Config.Shoptext = 'Press (E) to open the menu'
 Config.Coords = {
 	Menu = {
 		vector3(-3622.86, -2605.45, 13.34),  --ARMADILLO
