@@ -100,7 +100,7 @@ AddEventHandler(
                     Character:varyExp(2)
                     User:notify("xp", 2)
                 else
-                    User:notify("error", "Sem espaço no aforje!")
+                    User:notify("error", "No space!")
                     TriggerClientEvent("FRP:HERB_POPULATION:ForceVectorIndexReload", _source, indexComposite, index)
                 end
             end
