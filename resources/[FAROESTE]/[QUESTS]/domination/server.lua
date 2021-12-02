@@ -202,16 +202,16 @@ AddEventHandler(
                         if org_id then
                             Orgs.addMember(org_id, member_id, 1)
 
-                            User:notify("success", "Organizaçao criada!")
+                            User:notify("success", "Organization created!")
                         else
-                            User:notify("Ocorreu um erro ao criar sua org :(")
+                            User:notify("There was an error creating your org:(")
                             Inventory:addItem("money", _ILEGAL_ORG_CREATION_PRICE)
                         end
                     else
-                        User:notify("Sem dinheiro")
+                        User:notify("You don't enough money")
                     end
                 else
-                    User:notify("Você já está em uma org")
+                    User:notify("You are already in an org")
                 end
             end
         end
