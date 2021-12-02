@@ -79,7 +79,7 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
       --Citizen.InvokeNative(0x2A32FAA57B937173,0x6903B113, place.x,place.y,place.z-0.99, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.5, 1.5, 1.5, 255, 0, 0, 20, 0, 0, 2, 0, 0, 0, false)    
       if distance < 1.5 then
         sleep = 4
-        DrawText("Aperte ALT para pegar as cartas" , 0.925, 0.96, 0.25, 0.25, false, 255, 255, 255, 145, 1, 7)
+        DrawText("Press ALT to get the cards" , 0.925, 0.96, 0.25, 0.25, false, 255, 255, 255, 145, 1, 7)
         if IsControlJustReleased(0, 0xE8342FF2) then -- LEFT ALT
             cancelar()
             notif = true
@@ -105,7 +105,7 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
 
       while notif == true do
 
-        TriggerEvent('FRP:NOTIFY:Simple', 'Entregue as cartas no destino marcado', 10000)
+        TriggerEvent('FRP:NOTIFY:Simple', 'Deliver the cards to the marked destination', 10000)
         notif = false
 
         i = 1
@@ -114,14 +114,14 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
       --Citizen.InvokeNative(0x2A32FAA57B937173,0x6903B113, livpt[livr].x,livpt[livr].y,livpt[livr].z-0.99, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.5, 1.5, 1.5, 255, 0, 0, 20, 0, 0, 2, 0, 0, 0, false)    
       if #(vector3(px,py,pz) - GetEntityCoords(PlayerPedId())) < 3 then
         sleep = 4
-        DrawText("Aperte ALT para entregar" , 0.925, 0.96, 0.25, 0.25, false, 255, 255, 255, 145, 1, 7)
+        DrawText("Press ALT to deliver" , 0.925, 0.96, 0.25, 0.25, false, 255, 255, 255, 145, 1, 7)
         if IsControlJustReleased(0, 0xE8342FF2) then -- LEFT ALT
           notif2 = true
           posibilidad = math.random(1, 100)
           afaitunepizzamin = true
           nbDelivery = nbDelivery - 1
           pourboire = math.random(25, 60)
-          TriggerEvent('FRP:NOTIFY:Simple', 'Você recebeu $0.'.. pourboire, 10000)
+          TriggerEvent('FRP:NOTIFY:Simple', 'You received $0.'.. pourboire, 10000)
           TriggerServerEvent("FRP:DELIVERY:pay", pourboire)
           RemoveBlip(blip) 
           ClearGpsMultiRoute()
@@ -149,17 +149,17 @@ Citizen.CreateThread(function() --Thread lancement + livraison depuis le marker 
     if isToPizzaria == true then
       sleep = 4
       while notif2 == true do
-        TriggerEvent('FRP:NOTIFY:Simple', 'Volte para pegar mais cartas.', 10000)
+        TriggerEvent('FRP:NOTIFY:Simple', 'Come back for more cards.', 10000)
         notif2 = false
       end
       MarkerFrp(place.x,place.y,place.z, 255, 0, 0, 20)
       --Citizen.InvokeNative(0x2A32FAA57B937173,0x6903B113, place.x,place.y,place.z-0.99, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.5, 1.5, 1.5, 255, 0, 0, 20, 0, 0, 2, 0, 0, 0, false)    
       if #(vector3(place.x,place.y,place.z) -  GetEntityCoords(PlayerPedId())) < 3 and afaitunepizzamin == true then
         sleep = 4
-        DrawText("Aperte ALT para pegar as cartas" , 0.925, 0.96, 0.25, 0.25, false, 255, 255, 255, 145, 1, 7)
+        DrawText("Press ALT to get the cards" , 0.925, 0.96, 0.25, 0.25, false, 255, 255, 255, 145, 1, 7)
           if IsControlJustReleased(0, 0xE8342FF2) then -- LEFT ALT
               afaitunepizzamin = false
-              TriggerEvent('FRP:NOTIFY:Simple', 'Obrigado pelo seu trabalho, aqui está seu pagamento $'.. paie, 10000)
+              TriggerEvent('FRP:NOTIFY:Simple', 'Thanks for your work, here is your payment $'.. paie, 10000)
               TriggerServerEvent("FRP:DELIVERY:pay", paie)
               isInJobDelivery = true
               isToHouse = true
@@ -205,7 +205,7 @@ Citizen.CreateThread(function() -- Thread de "fim de serviço"
       MarkerFrp(placefin.x,placefin.y,placefin.z, 255, 0, 0, 20)
       if #(vector3(placefin.x, placefin.y, placefin.z) - pedcoord) < 2.5 then
         sleep = 4
-        DrawText("Aperte ALT para cancelar as entregas.", 0.925, 0.96, 0.25, 0.25, false, 255, 255, 255, 145, 1, 7)
+        DrawText("Press ALT to cancel deliveries.", 0.925, 0.96, 0.25, 0.25, false, 255, 255, 255, 145, 1, 7)
         if IsControlJustReleased(0, 0xE8342FF2) then -- LEFT ALT
           isInJobDelivery = false
           livr = 0
@@ -219,14 +219,14 @@ Citizen.CreateThread(function() -- Thread de "fim de serviço"
             local vehicleu = GetVehiclePedIsIn(PlayerPedId(), false)
             SetEntityAsMissionEntity( vehicleu, true, true )
             deleteCar( vehicleu )
-            TriggerEvent('FRP:NOTIFY:Simple', 'Obrigado pelos seus serviços.', 10000)
+            TriggerEvent('FRP:NOTIFY:Simple', 'Thank you for your services.', 10000)
             SetWaypointOff()
             afaitunepizzamin = false
           else
             local vehicleu = GetVehiclePedIsIn(PlayerPedId(), false)
             SetEntityAsMissionEntity( vehicleu, true, true )
             deleteCar( vehicleu )
-            TriggerEvent('FRP:NOTIFY:Simple', 'Obrigado pelos seus serviços.', 10000)
+            TriggerEvent('FRP:NOTIFY:Simple', 'Thank you for your services.', 10000)
           end
         end
       end
@@ -263,7 +263,7 @@ function cancelar()
           SetEntityAsMissionEntity( vehicleu, true, true )
           deleteCar( vehicleu )
         end
-        TriggerEvent('FRP:NOTIFY:Simple', 'Obrigado pelos seus serviços.', 10000)
+        TriggerEvent('FRP:NOTIFY:Simple', 'Thank you for your services.', 10000)
       end
     end
   end)
@@ -284,7 +284,7 @@ function goliv(livpt,livr)
   blip = N_0x554d9d53f696d002(408396114, livpt[livr].x,livpt[livr].y, livpt[livr].z)
   SetBlipSprite(blip, 408396114, 1)
   SetBlipScale(blip, 0.1)
-  Citizen.InvokeNative(0x9CB1A1623062F402, blip, 'Entrega')
+  Citizen.InvokeNative(0x9CB1A1623062F402, blip, 'Delivery')
 end
 
 function spawn_faggio() -- Thread spawn faggio
