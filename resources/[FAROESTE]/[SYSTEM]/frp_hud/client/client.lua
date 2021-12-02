@@ -260,7 +260,7 @@ function GetCurrentStateName()
     elseif town_hash == GetHashKey("Heartlands") then
         return "New Hanover"
     elseif town_hash == false then
-        return "Cidade Desconhecida"
+        return "Unknown City"
     end
 end
 
@@ -306,7 +306,7 @@ function GetCurrentRegionName()
     elseif town_hash == GetHashKey("Heartlands") then
         return "The Heartlands"
     elseif town_hash == false then
-        return "Desconhecido"
+        return "Unknown"
     end
 end
 
