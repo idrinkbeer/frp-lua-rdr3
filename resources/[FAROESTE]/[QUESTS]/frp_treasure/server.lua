@@ -22,8 +22,8 @@ local animals = {
  	[1] = {["A_C_Bear_01"] = 3},
 	[2] = {["A_C_Alligator_02"] = 3},
 	[3] = {["A_C_Wolf"] = 10},
-  [4] = {["A_C_Panther_01"] = 3},
-  [5] = {["G_M_M_UNISWAMP_01"] = 8}
+  	[4] = {["A_C_Panther_01"] = 3},
+  	[5] = {["G_M_M_UNISWAMP_01"] = 8}
 }
 
 local TREASURE = {
@@ -155,7 +155,7 @@ AddEventHandler(
 
     bauId[chest_id] = true 
 
-    print('Tesouro Perdido Spawn ID'..chest_id)
+    print('Lost Treasure Spawn ID'..chest_id)
     TriggerClientEvent("TREASURE:create", -1, x, y, z)
     for AnimalHash, Quantity in pairs(animals[math.random(1,5)]) do
       TriggerClientEvent("TREASURE:createPedDefender", GetHostId(), x + xram, y + yram, z, AnimalHash, Quantity)      
