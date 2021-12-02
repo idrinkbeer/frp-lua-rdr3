@@ -32,7 +32,7 @@ Clothes = {
         hash = 0xEABE0032
     },
     ["saia"] = {
-        name = "dresses",
+        name = "skirts",
         hash = 0xA0E3AB7F
     },
     ["coldre"] = {
