@@ -77,7 +77,7 @@ window.addEventListener("message", function(event) {
             }
         });
 
-        $('.production-info').text(`Tempo de produção: ${time} secs`);
+        $('.production-info').text(`Production time: ${time} secs`);
     }
 });
 
