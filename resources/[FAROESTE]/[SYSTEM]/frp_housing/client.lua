@@ -20,13 +20,13 @@ local show_house_prompts_blocked = false
 
 local houses = {
     -- ["house:1"] = {"Mansão Braithwaite", 20.0, 1.0, vec3(1011.094, -1772.385, 47.592), 34.0},
-    ["house:1"] = {"Chalé Renegado"     , 200.0, 80.0, vec3(1370.606 , -874.264 , 70.132 ), 25.0},
-    ["house:2"] = {"Recanto Dormente"   , 200.0, 80.0, vec3(1135.113 , -979.852 , 69.398 ), 25.0},
-    ["house:3"] = {"Renascença Espaçosa", 200.0, 80.0, vec3(-1680.596, -338.923 , 174.025), 20.0},
-    ["house:4"] = {"Refúgio Ensolarado" , 200.0, 80.0, vec3(-1412.024, -2672.382, 42.239 ), 15.0},
-    ["house:5"] = {"Posto Manzanita"    , 200.0, 80.0, vec3(-1978.603, -1667.799, 118.181), 12.5},
-    ["house:6"] = {"A Vista da Baía"    , 200.0, 80.0, vec3(-690.097 , 1044.061 , 135.004), 18.0},
-    ["house:7"] = {"Aconchego Rochoso"  , 200.0, 80.0, vec3(900.425  , 261.278  , 116.005), 20.0}
+    ["house:1"] = {"Renegade Cottage"     , 200.0, 80.0, vec3(1370.606 , -874.264 , 70.132 ), 25.0},
+    ["house:2"] = {"Sleeping Nook"   , 200.0, 80.0, vec3(1135.113 , -979.852 , 69.398 ), 25.0},
+    ["house:3"] = {"Big Renaissance", 200.0, 80.0, vec3(-1680.596, -338.923 , 174.025), 20.0},
+    ["house:4"] = {"Sunny Refuge" , 200.0, 80.0, vec3(-1412.024, -2672.382, 42.239 ), 15.0},
+    ["house:5"] = {"Manzanita Post"    , 200.0, 80.0, vec3(-1978.603, -1667.799, 118.181), 12.5},
+    ["house:6"] = {"The View of the Bay"    , 200.0, 80.0, vec3(-690.097 , 1044.061 , 135.004), 18.0},
+    ["house:7"] = {"Rocky House"  , 200.0, 80.0, vec3(900.425  , 261.278  , 116.005), 20.0}
 }
 
 local myhouseblips = {}
@@ -70,7 +70,7 @@ Citizen.CreateThread(
                             SetBlipSprite(blip, -2024635066, 1)
                             SetBlipScale(blip, 0.1)
                             -- Citizen.InvokeNative(0x9CB1A1623062F402, blip, houseName)
-                            Citizen.InvokeNative(0x9CB1A1623062F402, blip, "Minha Casa")
+                            Citizen.InvokeNative(0x9CB1A1623062F402, blip, "My house")
 
                             myhouseblips[houseId] = blip
                         end
@@ -107,7 +107,7 @@ Citizen.CreateThread(
                             PromptSetText(prompt_buy_gold, CreateVarString(10, "LITERAL_STRING", "~t4~G" .. housePriceGold))
                             PromptSetEnabled(prompt_buy_gold, true)
 
-                            PromptSetText(prompt_camera, CreateVarString(10, "LITERAL_STRING", "Inspecionar Casa"))
+                            PromptSetText(prompt_camera, CreateVarString(10, "LITERAL_STRING", "Inspect house"))
 
                             break
                         end
@@ -154,13 +154,13 @@ Citizen.CreateThread(
 
                 if PromptIsJustPressed(prompt_camera) then
                     if houseCam ~= nil then
-                        PromptSetText(prompt_camera, CreateVarString(10, "LITERAL_STRING", "Inspecionar Casa"))
+                        PromptSetText(prompt_camera, CreateVarString(10, "LITERAL_STRING", "Inspect house"))
 
                         PromptSetVisible(prompt_hide, true)
 
                         destroyHouseCam()
                     else
-                        PromptSetText(prompt_camera, CreateVarString(10, "LITERAL_STRING", "Parar de Inspecionar"))
+                        PromptSetText(prompt_camera, CreateVarString(10, "LITERAL_STRING", "Stop Inspecting"))
 
                         PromptSetVisible(prompt_hide, false)
 
@@ -240,7 +240,7 @@ function initiatePrompt()
 
     prompt_hide = PromptRegisterBegin()
     PromptSetControlAction(prompt_hide, 0x7F8D09B8) --
-    PromptSetText(prompt_hide, CreateVarString(10, "LITERAL_STRING", "Esconder"))
+    PromptSetText(prompt_hide, CreateVarString(10, "LITERAL_STRING", "Hide"))
     PromptSetEnabled(prompt_hide, 1)
     PromptSetVisible(prompt_hide, 1)
     PromptSetStandardMode(prompt_hide, 1)
