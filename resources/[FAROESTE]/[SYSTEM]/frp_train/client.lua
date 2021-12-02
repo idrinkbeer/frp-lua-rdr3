@@ -87,7 +87,7 @@ AddEventHandler('Trainroute', function(n)
     Citizen.InvokeNative(0xBA8818212633500A, train, 0, 1) -- this makes the train undrivable for players
          
     --blip--
-    local blipname = "Trem"
+    local blipname = "Train"
     local bliphash = -399496385
     local blip = Citizen.InvokeNative(0x23f74c2fda6e7c61, bliphash, train) -- BLIPADDFORENTITY
     SetBlipScale(blip, 1.5)
@@ -145,7 +145,7 @@ AddEventHandler('FRP:TRAIN:Bondroute', function(n)
    -- Citizen.InvokeNative(0xBA8818212633500A, bond, 0, 0) -- this makes the train undrivable for players
          
     --blip--
-    local blipname = "Bondinho"
+    local blipname = "Cableway"
     local bliphash = -399496385
     local blip = Citizen.InvokeNative(0x23f74c2fda6e7c61, bliphash, train) -- BLIPADDFORENTITY
     SetBlipScale(blip, 1.5)
@@ -182,7 +182,7 @@ function bondroute()
     end
 end
 
-RegisterCommand('deletartrain', function()
+RegisterCommand('deletetrain', function()
     DeleteEntity(CURRENT_BOND)
 end)
 
