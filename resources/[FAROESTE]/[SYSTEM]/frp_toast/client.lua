@@ -1,16 +1,16 @@
--- FRP:TOAST:New -> "speech", "Simular a fala de um personagem"
--- FRP:TOAST:New -> "dev", "Mensagem com intuito de ser para Devs"
--- FRP:TOAST:New -> "alert", "Você é viado"
--- FRP:TOAST:New -> "alert", "Você é viado"
--- FRP:TOAST:New -> "success", "Você é viado"
--- FRP:TOAST:New -> "error", "Você é viado"
+-- FRP:TOAST:New -> "speech", "Simulate a character's speech"
+-- FRP:TOAST:New -> "dev", "Intended message for Devs"
+-- FRP:TOAST:New -> "alert", "you are fag"
+-- FRP:TOAST:New -> "alert", "you are fag"
+-- FRP:TOAST:New -> "success", "you are fag"
+-- FRP:TOAST:New -> "error", "you are fag"
 -- FRP:TOAST:New -> "gold", 10
 -- FRP:TOAST:New -> "gold", -10
 -- FRP:TOAST:New -> "dollar", 10
 -- FRP:TOAST:New -> "dollar", -10
--- FRP:TOAST:New -> "item", "Pistola Vulcan", 10
--- FRP:TOAST:New -> "item", "Pistola Vulcan", -10
--- FRP:TOAST:New -> "longer_alert", "Toast que demora mais tempo para sumir, funciona para todos",
+-- FRP:TOAST:New -> "item", "Volcanic Pistol", 10
+-- FRP:TOAST:New -> "item", "Volcanic Pistol", -10
+-- FRP:TOAST:New -> "longer_alert", "Toast that takes longer to disappear works for everyone",
 
 RegisterNetEvent("FRP:TOAST:New")
 AddEventHandler(
