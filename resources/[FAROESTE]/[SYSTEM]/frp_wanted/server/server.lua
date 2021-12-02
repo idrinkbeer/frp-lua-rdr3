@@ -39,9 +39,9 @@ AddEventHandler(
             TriggerClientEvent("FRP:WANTED:gunshotInProgress", PoliceON[i].getSource(), targetCoords)
 
             if suspectInstead then
-                TriggerClientEvent("FRP:TOAST:New", PoliceON[i].getSource(), "alert", "Sheriff: Suspeito(a) encontrado em " .. CityName)
+                TriggerClientEvent("FRP:TOAST:New", PoliceON[i].getSource(), "alert", "Sheriff: Suspect found in " .. CityName)
             else
-                TriggerClientEvent("FRP:TOAST:New", PoliceON[i].getSource(), "alert", "Sheriff: Disparos por " .. playerGender .. " foram relatados em " .. CityName)
+                TriggerClientEvent("FRP:TOAST:New", PoliceON[i].getSource(), "alert", "Sheriff: Shots fire by " .. playerGender .. " were reported in " .. CityName)
             end
         end
     end
