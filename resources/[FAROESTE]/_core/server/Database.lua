@@ -44,11 +44,11 @@ function API_Database.registerDBDriver(name, on_init, on_prepare, on_query)
 				cached_prepares = nil
 				cached_queries = nil
 			else
-				error("Conexão com o banco de dados perdida.")
+				error("Lost database connection.")
 			end
 		end
 	else
-		error("Banco de dados registrado.")
+		error("Registered database.")
 	end
 end
 
