@@ -9,9 +9,9 @@ local head
 -- /////////////// MENU DO DEPARTAMENTO
 Citizen.CreateThread(
 	function()
-		WarMenu.CreateMenu("DpOfficerMenu", "Departamento")
-		WarMenu.SetSubTitle("DpOfficerMenu", "Opções")
-		WarMenu.CreateSubMenu("vehicle", "DpOfficerMenu", "Transporte.")
+		WarMenu.CreateMenu("DpOfficerMenu", "Department")
+		WarMenu.SetSubTitle("DpOfficerMenu", "Options")
+		WarMenu.CreateSubMenu("vehicle", "DpOfficerMenu", "Transport.")
 
 		while true do
 			Citizen.Wait(0)
@@ -22,7 +22,7 @@ Citizen.CreateThread(
 				for k, v in pairs(Config.Coords.Vehicles) do
 					if #(coords - vector3(v.Spawner.x, v.Spawner.y, v.Spawner.z)) < 3.0 then
 						if not IsPedInAnyVehicle(PlayerPedId(), true) then
-							DrawTxt("Aperte (ALT) para pegar uma carroça", 0.85, 0.95, 0.4, 0.4, true, 255, 255, 255, 255, true, 10000)
+							DrawTxt("Press (ALT) to get a cart", 0.85, 0.95, 0.4, 0.4, true, 255, 255, 255, 255, true, 10000)
 							if IsControlJustPressed(0, 0xE8342FF2) then
 								WarMenu.OpenMenu("DpOfficerMenu")
 								spawncoords = vector3(v.Spawner.x, v.Spawner.y, v.Spawner.z)
@@ -34,7 +34,7 @@ Citizen.CreateThread(
 				for k, v in pairs(Config.Coords.Vehicles) do
 					if #(coords - vector3(v.DV.x, v.DV.y, v.DV.z)) < 5.0 then
 						if IsPedInAnyVehicle(PlayerPedId(), true) then
-							DrawTxt("Aperte (ALT) para GUARGAR a carroça", 0.85, 0.95, 0.4, 0.4, true, 255, 255, 255, 255, true, 10000)
+							DrawTxt("Press (ALT) to STORE the cart", 0.85, 0.95, 0.4, 0.4, true, 255, 255, 255, 255, true, 10000)
 							if IsControlJustPressed(0, 0xE8342FF2) then -- Hold ALT
 								DeleteVehicle(GetVehiclePedIsIn(PlayerPedId(), false))
 							end
@@ -44,16 +44,16 @@ Citizen.CreateThread(
 			end
 
 			if WarMenu.IsMenuOpened("DpOfficerMenu") then
-				if WarMenu.MenuButton("Transportes", "vehicle") then
+				if WarMenu.MenuButton("Transport", "vehicle") then
 				end
 				WarMenu.Display()
 			elseif WarMenu.IsMenuOpened("vehicle") then
-				if WarMenu.Button("Carroça 2") then
+				if WarMenu.Button("Cart 2") then
 					print(spawncoords, head)
 					SpawnVehicle("POLICEWAGON01X", spawncoords, head)
-				elseif WarMenu.Button("Carroça Cela") then
+				elseif WarMenu.Button("Prisoner Cart") then
 					SpawnVehicle("WAGONPRISON01X", spawncoords, head)
-				elseif WarMenu.Button("Carrça Carga") then
+				elseif WarMenu.Button("Cargo Cart") then
 					SpawnVehicle("supplywagon", spawncoords, head)
 				end
 				WarMenu.Display()
@@ -327,7 +327,7 @@ AddEventHandler(
 				end
 				if freeSeat ~= nil then
 					SetPedIntoVehicle(PlayerPedId(), vehicle, 2)
-					TriggerEvent("chatMessage", "SISTEMA", {255, 255, 255}, "Você foi colocado dentro do veículo")
+					TriggerEvent("chatMessage", "SYSTEM", {255, 255, 255}, "You were put into the vehicle")
 				--DragStatus.IsDragged = false
 				end
 			end
@@ -354,7 +354,7 @@ AddEventHandler(
 		if distance ~= -1 and distance <= 3.0 then
 			if player == handcuffed then
 			else
-				print("chegouaqui")
+				print("arrived")
 				TriggerServerEvent("FRP:SHERIFF:outing", GetPlayerServerId(player))
 			end
 		else
@@ -448,8 +448,8 @@ AddEventHandler(
 		local players = GetPlayerServerId(source)
 		if distance ~= -1 and distance <= 3.0 then
 			TriggerServerEvent("FRP:SHERIFF:unlocking", GetPlayerServerId(player))
-			TriggerEvent("chatMessage", "SISTEMA", {255, 255, 255}, "Você soltou. (" .. GetPlayerName(player) .. ")")
-			print("passou aqui uncuff")
+			TriggerEvent("chatMessage", "SYSTEM", {255, 255, 255}, "You let (" .. GetPlayerName(player) .. ") go.")
+			print("passed here uncuff")
 		else
 			--    TriggerEvent('chatMessage', 'SISTEMA', {255, 255, 255}, 'Ninguem próximo está algemado')
 		end
@@ -474,9 +474,9 @@ AddEventHandler(
 			FreezeEntityPosition(ped, false)
 			ClearPedTasksImmediately(ped)
 			TriggerServerEvent("FRP:SHERIFF:unlocking", GetPlayerServerId(player))
-			TriggerEvent("fc_notify:start", "Algemas quebradas", 5, "success")
+			TriggerEvent("fc_notify:start", "broke handcuffs", 5, "success")
 		else
-			TriggerEvent("chatMessage", "SISTEMA", {255, 255, 255}, '"Você já está quebrando as algemas')
+			TriggerEvent("chatMessage", "SYSTEM", {255, 255, 255}, '"You are already breaking the handcuffs')
 		end
 	end
 )
