@@ -31,9 +31,9 @@ AddEventHandler(
 
 
 local reward2 = 0
-local pname = "Nome Desconhecido"
+local pname = "Unknown name"
 local annon = false
-local CityName = "Cidade Fantasma"
+local CityName = "Ghost town"
 local TimeAlert = 0
 
 Citizen.CreateThread(
@@ -51,7 +51,7 @@ Citizen.CreateThread(
                 if arma then                   
                     if TimeAlertDiff <= 0 then
                     --       local Policia = cAPI.hasGroupOrInheritance('trooper') or cAPI.hasGroupOrInheritance('sheriff')
-                        if CityName ~= nil and CityName ~= "Cidade Fantasma" then
+                        if CityName ~= nil and CityName ~= "Ghost town" then
                             local ped = PlayerPedId()
                             local currentWeaponHash = GetCurrentPedWeapon(ped)
                             local havesilence = false
@@ -118,8 +118,8 @@ Citizen.CreateThread(
             if annon then
                 DrawSprite("menu_textures", "translate_bg_1a", 0.50, 0.10, 0.30, 0.10, 0.8, 0, 0, 0, 250, 1)
                 DrawTxt("~e~PROCURADO", 0.50, 0.05, 0.9, 0.9, true, 255, 255, 255, 255, true)
-                DrawTxt("Capture ~e~" .. pname .. " ~q~morto ou vivo, recompensa $" .. reward2, 0.50, 0.10, 0.3, 0.3, true, 255, 255, 255, 255, true)
-                DrawTxt("E leve para o Sheriff de ~e~" .. CityName, 0.50, 0.12, 0.3, 0.3, true, 255, 255, 255, 255, true)
+                DrawTxt("Capture ~e~" .. pname .. " ~q~dead or alive, reward $" .. reward2, 0.50, 0.10, 0.3, 0.3, true, 255, 255, 255, 255, true)
+                DrawTxt("And take it to the Sheriff of ~e~" .. CityName, 0.50, 0.12, 0.3, 0.3, true, 255, 255, 255, 255, true)
             end
         end
     end
@@ -188,7 +188,7 @@ function GetCurrentTownName()
     elseif town_hash == GetHashKey("Manicato") then
         return "Manicato"
     elseif town_hash == false then
-        return "Cidade Fantasma"
+        return "Ghost town"
     end
 end
 
