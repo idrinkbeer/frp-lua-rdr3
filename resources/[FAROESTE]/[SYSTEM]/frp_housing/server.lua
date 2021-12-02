@@ -37,7 +37,7 @@ AddEventHandler(
         ]]
 
         if Character:hasGroupOrInheritance(house_id) then
-            User:notify("error", "Você já alugou esta residência")
+            User:notify("error", "You already rented this residence")
             return
         end
 
@@ -45,7 +45,7 @@ AddEventHandler(
         local rows = dbAPI.query("SELECT:house_rent", {house_id = house_id})
 
         if #rows > 0 then
-            User:notify("error", "Está residência já está alugada")
+            User:notify("error", "This residence is already rented")
             return
         end
 
@@ -56,12 +56,12 @@ AddEventHandler(
         currencyAmount = currencyAmount * 100
 
         if Inventory:getItemAmount(currencyItem) < currencyAmount then
-            User:notify("error", "Você não tem " .. (withGold and 'ouros' or 'dollares') .. " suficientes.")
+            User:notify("error", "You do not have " .. (withGold and 'ouros' or 'dollares') .. " enough.")
             return
         end
 
         if Inventory:removeItem(-1, currencyItem, currencyAmount) then
-            User:notify("success", "Parábens! Agora essa residência está sobe sua gerência")
+            User:notify("success", "Congradulations, this residence is under your managment!")
             Character:addGroup(house_id)
 
             local date = os.date("*t")
