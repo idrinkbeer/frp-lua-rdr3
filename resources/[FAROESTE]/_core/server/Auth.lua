@@ -54,13 +54,13 @@ Queue.OnReady(
                             TriggerEvent("API:playerJoin", user_id, source, playerName)
                             allow()
                         else
-                            allow("ERROR: Você está banido!")
+                            allow("ERROR: You are banned!")
                         end
                     else
-                        allow("ERROR: Você não tem permissão. \n Passe seu ID a adminstração: " .. user_id .. " \n discord.gg/nf4Qbdm")
+                        allow("ERROR: You do not have permission.\n Pass your ID to admin: " .. user_id .. " \n discord.gg/yourdiscordid")
                         end
                 else
-                    allow("ERROR: Falha ao encontrar ou criar o seu usúario, contate a STAFF!")
+                    allow("ERROR: Failed to find or create your user, contact STAFF!")
                 end                
             end
         )
