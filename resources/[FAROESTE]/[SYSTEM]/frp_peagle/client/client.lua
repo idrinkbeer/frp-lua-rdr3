@@ -1,7 +1,7 @@
 local pigeons = {}
 
 local prompt
-local prompt_name = CreateVarString(10, "LITERAL_STRING", "Pombo Correio")
+local prompt_name = CreateVarString(10, "LITERAL_STRING", "Carrier pigeon")
 
 
 
@@ -41,7 +41,7 @@ AddEventHandler('FRP:PEAGLE:ReceiveMenssage', function(PlayerCoords, text)
         TaskFlyToCoord(pigeon, 0, playc.x, playc.y, playc.z+30, 1, 0)
         Citizen.InvokeNative(0xA5C38736C426FCB8, pigeon, true)
 
-        local blipname = "Pombo Correio"
+        local blipname = "Carrier pigeon"
         local bliphash = 587827268
         blip = Citizen.InvokeNative(0x23f74c2fda6e7c61, bliphash, pigeon) -- BLIPADDFORENTITY
         SetBlipScale(blip, 0.5)
@@ -62,7 +62,7 @@ AddEventHandler('FRP:PEAGLE:ReceiveMenssage', function(PlayerCoords, text)
               
                 if dst < 25 then  
                     if not Notified then
-                        TriggerEvent('FRP:NOTIFY:Simple', 'Você recebeu um pombo correio, espere até o pombo se aproximar de ti.', 5000)
+                        TriggerEvent('FRP:NOTIFY:Simple', 'You have received a carrier pigeon, wait until the pigeon approaches you.', 5000)
                         Notified = true 
                         back = false                   
                     end
@@ -155,7 +155,7 @@ function InitiatePrompts()
     prompt_group = GetRandomIntInRange(0, 0xffffff)
     prompt = PromptRegisterBegin()
     PromptSetControlAction(prompt, 0xE8342FF2)
-    PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Pegar Mensagem"))
+    PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Receive Message"))
     PromptSetEnabled(prompt, true)
     PromptSetVisible(prompt, true)
     PromptSetHoldMode(prompt, true)
