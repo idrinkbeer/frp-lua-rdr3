@@ -1,7 +1,7 @@
 Config              = {}
 Config.JailBlip     = {x = 3372.48, y = -667.09, z = 46.41}
 Config.JailLocation = {x = 3372.48, y = -667.09, z = 46.41}
-Config.Locale       = 'br'
+Config.Locale       = 'en' --p sure does nothing but why not, change can be good lol
 
 
 
