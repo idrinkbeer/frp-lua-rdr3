@@ -1,5 +1,5 @@
 
-const LOCALE = "BR"; // EN / CUSTOM
+const LOCALE = "EN"; // EN / CUSTOM
 const LOCALES = 
 {
     "EN":{
