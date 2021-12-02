@@ -28,12 +28,12 @@ function required()     {
 
     if (empt == "")
         {
-            $.post('http://frp_creator/CheckButtons', "O nome não pode ficar vazio");
+            $.post('http://frp_creator/CheckButtons', "The name cannot be empty");
             return false;
         }
     else if(empt2 == "")
         {
-            $.post('http://frp_creator/CheckButtons', "A idade não pode ficar vazia");
+            $.post('http://frp_creator/CheckButtons', "The age cannot be empty");
             return false;
         }
     else {
