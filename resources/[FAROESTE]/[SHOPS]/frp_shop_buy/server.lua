@@ -39,7 +39,7 @@ local verificationData = {
     -- ["Planeta Semente'"] = {
     --     ["tobacco_seed"] = {1, 100, 10}
     -- }
-    ["Mercado Clandestino"] = {			
+    ["Store"] = {			
         ["medicine_poor"] = {0, 1000, 100, 1},
         ["stimulant_poor"] = {0, 1000, 100, 1},
         ["pigeonpost"] = {0, 500, 30, 1},
@@ -50,7 +50,7 @@ local verificationData = {
         ["acamp_firesmal_pan"] = {0, 800, 60, 1}		
 	},
 
-    ["Mercado Geral"] = {
+    ["General Store"] = {
         ["tobacco_seed"] = {0, 10, 4, 5},
         ["corn_seed"] = {0, 10, 4, 5},
         ["sugarcane_seed"] = {0, 10, 4, 5},
