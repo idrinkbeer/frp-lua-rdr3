@@ -44,7 +44,7 @@ local WorkStations = {
     }
 }
 
-local varString_carteiro = CreateVarString(10, "LITERAL_STRING", "Carteiro")
+local varString_carteiro = CreateVarString(10, "LITERAL_STRING", "Postman")
 
 Citizen.CreateThread(
     function()
@@ -72,7 +72,7 @@ Citizen.CreateThread(
                     notifyHelp(" ")
                     if Cards < 15 then
                         if GetDistanceBetweenCoords(getPosts().x, getPosts().y, getPosts().z, posPlayer[0], posPlayer[1], posPlayer[2]) < 2.5 then
-                            PromptSetText(postManPrompt, CreateVarString(10, "LITERAL_STRING", "Pegar Cartas"))
+                            PromptSetText(postManPrompt, CreateVarString(10, "LITERAL_STRING", "Pick Up Cards"))
                             PromptSetActiveGroupThisFrame(postManGroup, varString_carteiro)
                             if PromptHasHoldModeCompleted(postManPrompt) then
                                 Citizen.Wait(100)
@@ -92,7 +92,7 @@ Citizen.CreateThread(
                     else
                         if Cards ~= 0 then
                             if GetDistanceBetweenCoords(SettedRoute.x, SettedRoute.y, SettedRoute.z, posPlayer[0], posPlayer[1], posPlayer[2]) < 4.5 then
-                                PromptSetText(postManPrompt, CreateVarString(10, "LITERAL_STRING", "Jogar Carta"))
+                                PromptSetText(postManPrompt, CreateVarString(10, "LITERAL_STRING", "play card"))
                                 PromptSetActiveGroupThisFrame(postManGroup, varString_carteiro)
                                 if PromptHasHoldModeCompleted(postManPrompt) then
                                     Citizen.Wait(100)
@@ -102,7 +102,7 @@ Citizen.CreateThread(
                                 end
                             end
                         else
-                            notifyHelp("Suas cartas acabaram, aguarde 20 minutos e vá para o posto novamente.")
+                            notifyHelp("Your cards are gone, wait 20 minutes and go to the post again.")
                             DeleteBlips()
                             timer = 1200
                             steps = 0
@@ -147,7 +147,7 @@ Citizen.CreateThread(
                 end
 
                 if blip["start" .. i] == nil then
-                    CreateBlip("start" .. i, WorkStations[i], "Correio", 1861010125)
+                    CreateBlip("start" .. i, WorkStations[i], "Mail", 1861010125)
                 end
 
                 postUsing = i
@@ -193,7 +193,7 @@ function createPrompt()
     if PromptIsValid(postManPrompt) then
         postManPrompt = PromptRegisterBegin()
         PromptSetControlAction(postManPrompt, 0xE8342FF2)
-        PromptSetText(postManPrompt, CreateVarString(10, "LITERAL_STRING", "Pegar Emprego"))
+        PromptSetText(postManPrompt, CreateVarString(10, "LITERAL_STRING", "Take A Job"))
         PromptSetEnabled(postManPrompt, 1)
         PromptSetVisible(postManPrompt, 1)
         PromptSetHoldMode(postManPrompt, 1)
