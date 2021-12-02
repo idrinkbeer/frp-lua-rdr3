@@ -26,7 +26,7 @@ Citizen.CreateThread(function()
 
                 if DoesEntityExist(entity) <= 1.5 then
                     sleepThread = 5
-                    DrawText3D(lixo.x, lixo.y, lixo.z + 1.5, 'Vasculhar [~g~E~s~]')  
+                    DrawText3D(lixo.x, lixo.y, lixo.z + 1.5, 'Search [~g~E~s~]')  
 
                     if IsControlJustReleased(0, 0x9FA5AD07) then
                         if not trash2[entity] then
@@ -34,7 +34,7 @@ Citizen.CreateThread(function()
 
                             OpenTrashCan()
                         else
-                            notify("Você já vasculhou este lixo!")
+                            notify("You've already rummaged through this garbage!")
                         end
                     end
                 end
