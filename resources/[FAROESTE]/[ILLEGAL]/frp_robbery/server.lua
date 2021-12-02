@@ -12,19 +12,19 @@ local data = {
     --     staticMaxParticipants = 3
     -- },
     [2] = {
-        staticName = "Banco de Saint Dennis",
+        staticName = "Saint Dennis Bank",
         staticReward = 50000,
         staticSecondsToReward = 10 * 60,
         staticMaxParticipants = 3
     },
     [3] = {
-        staticName = "Banco Rhodes",
+        staticName = "Rhodes Bank",
         staticReward = 35000,
         staticSecondsToReward = 10 * 60,
         staticMaxParticipants = 3
     },
     [4] = {
-        staticName = "Banco Valentine",
+        staticName = "Valentine Bank",
         staticReward = 50000,
         staticSecondsToReward = 10 * 60,
         staticMaxParticipants = 3
@@ -50,14 +50,14 @@ AddEventHandler(
 
         if interiorIndexBeingRobbed ~= nil then
             -- print("Interior já está sendo roubado")
-            TriggerClientEvent("FRP:NOTIFY:Simple", _source, "Esse local já está sendo roubado")
+            TriggerClientEvent("FRP:NOTIFY:Simple", _source, "This place is already being robbed")
             return
         end
 
         if cooldownEndsAtTimeStamp > os.time() then
             -- print("Fomos assaltados a pouco tempo, não temos dinheiro")
             print("FRP_ROBBERY", cooldownEndsAtTimeStamp, cooldownEndsAtTimeStamp - os.time())
-            TriggerClientEvent("FRP:NOTIFY:Simple", _source, "Fomos assaltados a pouco tempo, não temos dinheiro")
+            TriggerClientEvent("FRP:NOTIFY:Simple", _source, "We were robbed a short time ago, we have no money")
             return
         else
             cooldownEndsAtTimeStamp = 0
@@ -66,7 +66,7 @@ AddEventHandler(
         local numTroopers = #API.getUsersByGroup("trooper")
 
         if 6 < 5 then
-            TriggerClientEvent("FRP:NOTIFY:Simple", _source, "Este banco não pode ser roubado, polícia insuficiente.")
+            TriggerClientEvent("FRP:NOTIFY:Simple", _source, "This bank cannot be robbed, not enough police.")
             return
         end
 
@@ -106,7 +106,7 @@ AddEventHandler(
             isParticipant = nil
         end
 
-        API.NotifyUsersWithGroup("trooper", "Um assalto começou no banco " .. data[index].staticName)
+        API.NotifyUsersWithGroup("trooper", "A bank robbery started " .. data[index].staticName)
     end
 )
 
@@ -155,7 +155,7 @@ function endRobberyGiveReward()
 
         local user_id = p_User:getId()
 
-        TriggerEvent("FRP:COMBATLOG:AddUserCombatReason", user_id, 300, "Roubo a Banco")
+        TriggerEvent("FRP:COMBATLOG:AddUserCombatReason", user_id, 300, "Bank robbery")
 
         if User == nil then
             _source = participantSource
@@ -183,7 +183,7 @@ function endRobberyGiveReward()
     indexBeingRobbed_participants = {}
     robberyBeingEnded = false
 
-    TriggerClientEvent("FRP:TOAST:New", -1, "alert", "O assalto acabou!")
+    TriggerClientEvent("FRP:TOAST:New", -1, "alert", "The robbery is over!")
     TriggerClientEvent("FRP:ROBBERY:EndRobbery", -1)
 end
 
@@ -214,7 +214,7 @@ AddEventHandler(
             TriggerClientEvent("FRP:ROBBERY:EndRobbery", -1)
         end
 
-        API.NotifyUsersWithGroup("trooper", "-1 Assaltante")
+        API.NotifyUsersWithGroup("trooper", "-1 Burglar")
 
         -- print("Player " .. _source .. " left the robbery")
         -- TriggerClientEvent('FRP:Notify', _source, "O " .. _source .. " left the robbery")
@@ -226,7 +226,7 @@ AddEventHandler(
     function(source, reason)
         if indexBeingRobbed_participants[source] ~= nil then
             TriggerEvent("FRP:ROBBERY:PlayerAbandonedRobbery", source)
-            API.NotifyUsersWithGroup("trooper", "-1 Assaltante")
+            API.NotifyUsersWithGroup("trooper", "-1 Burglar")
         end
     end
 )
