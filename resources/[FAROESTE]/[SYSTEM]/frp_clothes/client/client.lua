@@ -118,19 +118,19 @@ local skirts_f = {}
 
 cameraUsing = {
     {
-        name = "Pernas",
+        name = "Legs",
         x = -1.0,
         y = 0.0,
         z = 0.5
     },
     {
-        name = "Rosto",
+        name = "Face",
         x = -0.5,
         y = 0.0,
         z = 0.6
     },
     {
-        name = "Corpo",
+        name = "Body",
         x = -1.3,
         y = 0.0,
         z = 0.4
@@ -306,7 +306,7 @@ AddEventHandler(
 
             SetEveryoneAsInvisible()
         else
-            TriggerEvent("FRP:NOTIFY:Simple", "Você ainda está como procurado, não pode trocar de roupa. ", 10000)
+            TriggerEvent("FRP:NOTIFY:Simple", "You are wanted... ", 10000)
         end
     end
 )
@@ -422,7 +422,7 @@ function createCamera()
     SetCamRot(fixedCam, -15.0, 0, 115.09)
     Wait(3000)
     cAPI.OutFade(500)
-    TriggerEvent("FRP:NOTIFY:Simple", "Utilize as teclas A e D para rotacionar o personagem, e as setas do teclado para selecionar as opções.", 10000)
+    TriggerEvent("FRP:NOTIFY:Simple", "Use the A and D keys to rotate the character, and the keyboard arrow keys to select options.", 10000)
     --SetCamFov(fixedCam, 100)
     SetCamActive(fixedCam, true)
     SetCamActiveWithInterp(fixedCam, groundCam, 3900, true, true)
@@ -1288,7 +1288,7 @@ Citizen.CreateThread(
             for _, shopPosition in pairs(shops) do
                 if #(pPosition - shopPosition) <= 1.5 then
                     positionBack = shopPosition
-                    DrawTxt("Pressione ALT para abrir a loja de roupas.", 0.85, 0.95, 0.35, 0.35, true, 255, 255, 255, 200, true, 10000)
+                    DrawTxt("Press ALT to open the tailor.", 0.85, 0.95, 0.35, 0.35, true, 255, 255, 255, 200, true, 10000)
                     if IsControlJustReleased(0, 0xE8342FF2) then -- LEFT ALT
                         print("presses")
                         TriggerEvent("FRP:STORECLOTHES:OpenClothingMenu")
