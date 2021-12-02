@@ -1,7 +1,7 @@
 Config = {}
 
-Config.NoMoney = 'Não tem dinheiro suficiente $'
-Config.Shoptext = 'Aperte (E) para se curar'
+Config.NoMoney = 'You don\'t have enough money'
+Config.Shoptext = 'Press (E) to heal'
 Config.Coords = {
 	Codds = {
 		-- vector3(-285.87, 805.07, 119.39), -- Valentine
