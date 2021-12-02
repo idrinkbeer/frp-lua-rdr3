@@ -135,7 +135,7 @@ function API.User(source, id, ipAddress)
             if Horse ~= nil then
                 TriggerClientEvent("FRP:HORSE:SetHorseInfo", self:getSource(), Horse:getModel(), Horse:getName(), horseComponents)
             else
-                TriggerClientEvent("FRP:HORSE:SetHorseInfo", self:getSource(), "A_C_Horse_MP_Mangy_Backup", "Pangaré", {0x106961A8, 0x508B80B9})
+                TriggerClientEvent("FRP:HORSE:SetHorseInfo", self:getSource(), "A_C_Horse_MP_Mangy_Backup", "Prince", {0x106961A8, 0x508B80B9})
             end
 
             local posse = API.getPosse(tonumber(json.decode(charRow[1].metaData).posse))
