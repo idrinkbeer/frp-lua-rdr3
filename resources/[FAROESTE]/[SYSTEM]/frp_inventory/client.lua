@@ -387,7 +387,7 @@ function computeSlots(table, asPrimary)
             local ammoInWeapon = values.amount[3]
            
             values.itemName = itemInfo.name
-            values.itemDescription = itemInfo.description or "Descrição"
+            values.itemDescription = itemInfo.description or "Description"
             values.itemStackSize = itemInfo.stackSize or 1
 
             local itemType = itemInfo.type
@@ -440,15 +440,15 @@ function computeSlots(table, asPrimary)
 end
 
 RegisterCommand(
-    "enviar",
+    "send",
     function(source, args, raw)
         if #args < 2 then
-            cAPI.notify("error", "Sintaxe: /enviar nomedoitem 2")
+            cAPI.notify("error", "Syntax: /send itemname id")
             return
         end
 
         if cAPI.IsWanted() then
-            TriggerEvent('FRP:NOTIFY:Simple', 'Você ainda está como procurado, não pode transferir um item. ', 10000)
+            TriggerEvent('FRP:NOTIFY:Simple', 'You are wanted... ', 10000)
             return
         end
 
@@ -457,7 +457,7 @@ RegisterCommand(
         local targetPlayerServerId, distance = GetClosestPlayer()
        
         if targetPlayerServerId == nil then
-            cAPI.notify('error', 'Ninguem por perto')
+            cAPI.notify('error', 'No one nearby')
             return
         end
 
