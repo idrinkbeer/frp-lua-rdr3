@@ -1,6 +1,6 @@
 window.addEventListener("message", function (event) { //lua actions
     if (event.data.action == 'open') {
-        $(".inner-container").html("<h2>MENU BANDO</h2>");
+        $(".inner-container").html("<h2>POSSE MENU</h2>");
         $('.container').fadeIn();
         $('h2').text('Menu Bando - ' + event.data.clanName);
         $.each(event.data.data, function (charId, data) {
@@ -33,9 +33,9 @@ window.addEventListener("message", function (event) { //lua actions
                     </div>
                 </div>
             `);
-                Tooltip(document.getElementById(`Promote-${charId}`), "Subir Cargo")
-                Tooltip(document.getElementById(`Unpromote-${charId}`), "Descer Cargo")
-                Tooltip(document.getElementById(`Remove-${charId}`), "Remover do Bando")
+                Tooltip(document.getElementById(`Promote-${charId}`), "Move Position Up")
+                Tooltip(document.getElementById(`Unpromote-${charId}`), "Move Position Down")
+                Tooltip(document.getElementById(`Remove-${charId}`), "Remove from Posse")
                 Tooltip(document.getElementById(`Info-${charId}`), `
                 <a style="color: white;"text-align:center;"> Dados do jogador no bando:</a><br>
                 <a style="color: white;">Passaporte: <font style="color: rgba(127,220,86,1.0);"> ${data.UserID} </font></a><br>
