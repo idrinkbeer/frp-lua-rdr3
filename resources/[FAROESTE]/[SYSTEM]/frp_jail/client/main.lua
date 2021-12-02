@@ -110,7 +110,7 @@ Citizen.CreateThread(function()
 			if fastTimer < 0 then
 				fastTimer = JailTime
 			end
-			DrawTxt('PRESO: ' .. tonumber(string.format("%.0f", fastTimer)) .. ' segundos para você ser libertado.', 0.70, 0.95, 0.4, 0.4, true, 255, 255, 255, 150, false)
+			DrawTxt('???: ' .. tonumber(string.format("%.0f", fastTimer)) .. ' seconds for you to be released.', 0.70, 0.95, 0.4, 0.4, true, 255, 255, 255, 150, false)
 			fastTimer = fastTimer - 0.01
 		else
 			Citizen.Wait(1000)
