@@ -13,10 +13,10 @@ AddEventHandler(
         local Inventory = User:getCharacter():getInventory()
 
         if Inventory:getItemAmount("money") < price then
-            User:notify("error", "Dinheiro insuficiente!")
+            User:notify("error", "Insufficient money!")
             return
         end
-        User:notify("successo", "Você foi curado")
+        User:notify("successo", "You were healed")
         User:notify("item", "money", -price) 
         Inventory:removeItem(-1, "money", price)
         TriggerClientEvent("heal:player", _source)
