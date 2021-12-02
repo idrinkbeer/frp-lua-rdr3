@@ -13,7 +13,7 @@ AddEventHandler(
 			cAPI.SetPlayerPed(pedModel)			
 			cAPI.setPlayerAppearence(PlayerPedId())
 		else
-			TriggerEvent("FRP:NOTIFY:Simple", "Você ainda está como procurado, não pode trocar de roupa. ", 10000)
+			TriggerEvent("FRP:NOTIFY:Simple", "You are wanted... ", 10000)
 		end
 	end
 )
@@ -383,7 +383,7 @@ RegisterCommand(
 			adminModeOn = not adminModeOn
 			cAPI.notify("error", "ADMIN :o")
 		else
-			cAPI.notify("error", "Não não")
+			cAPI.notify("error", "Nah Dawg")
 		end
 	end,
 	false
