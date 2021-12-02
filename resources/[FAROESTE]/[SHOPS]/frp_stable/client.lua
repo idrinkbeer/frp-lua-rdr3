@@ -29,7 +29,7 @@ cameraUsing = {
         z = 1.8
     },
     {
-        name = "Olhos",
+        name = "Eyes",
         x = 0.0,
         y = -0.4,
         z = 0.65
@@ -74,7 +74,7 @@ Citizen.CreateThread(
 )
 
 RegisterCommand(
-    "estabulo",
+    "stable",
     function()
         OpenStable()
     end
@@ -117,7 +117,7 @@ function OpenStable()
 end
 
 local promptGroup
-local varStringCasa = CreateVarString(10, "LITERAL_STRING", "Estabulo")
+local varStringCasa = CreateVarString(10, "LITERAL_STRING", "Stable")
 local blip
 local prompts = {}
 local SpawnPoint = {}
@@ -154,11 +154,11 @@ Citizen.CreateThread(
         for _, v in pairs(Config.Stables) do
             -- blip = N_0x554d9d53f696d002(1664425300, v.Pos.x, v.Pos.y, v.Pos.z)
             SetBlipSprite(blip, -145868367, 1)
-            Citizen.InvokeNative(0x9CB1A1623062F402, blip, "Estábulo")
+            Citizen.InvokeNative(0x9CB1A1623062F402, blip, "Stable")
             local prompt = PromptRegisterBegin()
             PromptSetActiveGroupThisFrame(promptGroup, varStringCasa)
             PromptSetControlAction(prompt, 0xE8342FF2)
-            PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Acessar Estábulo"))
+            PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Access Stable"))
             PromptSetStandardMode(prompt, true)
             PromptSetEnabled(prompt, 1)
             PromptSetVisible(prompt, 1)
@@ -697,7 +697,7 @@ RegisterNUICallback(
 RegisterNUICallback(
     "BuyHorse",
     function(data)
-        local HorseName = cAPI.prompt("Nome do Cavalo:", "")
+        local HorseName = cAPI.prompt("Name Your Horse:", "McHorse")
         
         if HorseName == "" then
             return
