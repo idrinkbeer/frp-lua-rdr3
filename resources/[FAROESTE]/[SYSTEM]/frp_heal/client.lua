@@ -41,7 +41,7 @@ Citizen.CreateThread(
 
             local prompt = PromptRegisterBegin()
             PromptSetControlAction(prompt, 0xE8342FF2)
-            PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Atendimento Médico"))
+            PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "See A Doctor"))
             PromptSetEnabled(prompt, 1)
             PromptSetVisible(prompt, 1)
             PromptSetHoldMode(prompt, 1)
