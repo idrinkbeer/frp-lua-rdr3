@@ -15,18 +15,18 @@ local damageBone = {0}
 -- local diedOfFatalCause = false
 local TookDamageToVitalOrgan = false
 local BodyPartDamage = {
-	["cabeça"] = {},
-	["pescoço"] = {},
-	["coluna"] = {},
-	["maoesquerda"] = {},
-	["maodireita"] = {},
-	["braçodireito"] = {},
-	["braçoesquerdo"] = {},
-	["pernadireita"] = {},
-	["pedireito"] = {},
-	["pernaesquerda"] = {},
-	["peesquerdo"] = {},
-	["genitaria"] = {}
+	["head"] = {},
+	["neck"] = {},
+	["spine"] = {},
+	["left hand"] = {},
+	["right hand"] = {},
+	["right arm"] = {},
+	["left arm"] = {},
+	["right leg"] = {},
+	["right foot"] = {},
+	["left leg"] = {},
+	["left foot"] = {},
+	["genitalia"] = {}
 }
 
 local diedOfFatalCauseCauses = {
@@ -112,22 +112,22 @@ local DeathCauses = {
 }
 
 local vitalBones = {
-	"cabeça",
-	"pescoço",
-	"coluna"
+	"head",
+	"neck",
+	"spine"
 }
 
 
 local allbones = {
-	["cabeça"] = {
+	["head"] = {
 		21030
 	},
-	["pescoço"] = {
+	["neck"] = {
 		14283,
 		14284,
 		14285
 	},
-	["coluna"] = {
+	["spine"] = {
 		14410,
 		14411,
 		14412,
@@ -138,7 +138,7 @@ local allbones = {
 		11569,
 		56200
 	},
-	["maoesquerda"] = {
+	["left hand"] = {
 		41403,
 		41404,
 		41405,
@@ -160,7 +160,7 @@ local allbones = {
 		41342,
 		34606
 	},
-	["maodireita"] = {
+	["right hand"] = {
 		16827,
 		16828,
 		16829,
@@ -182,37 +182,37 @@ local allbones = {
 		16766,
 		22798
 	},
-	["braçodireito"] = {
+	["right arm"] = {
 		54187,
 		46065
 	},
-	["braçoesquerdo"] = {
+	["left arm"] = {
 		53675,
 		37873
 	},
-	["pernadireita"] = {
+	["right leg"] = {
 		6884,
 		43312,
 		54802
 	},
-	["pedireito"] = {
+	["right foot"] = {
 		33646,
 		41273,
 		18013,
 		18029
 	},
-	["peesquerdo"] = {
+	["left foot"] = {
 		45454,
 		53081,
 		11440,
 		11456
 	},
-	["pernaesquerda"] = {
+	["left leg"] = {
 		65478,
 		55120,
 		30226
 	},
-	["genitaria"] = {
+	["genitalia"] = {
 		10208,
 		10209,
 		39035
@@ -422,7 +422,7 @@ function HandleAsInjured(fatal)
 
 				if fullDeathTimeDiff <= 0 then
 					DrawSprite("menu_textures", "translate_bg_1a", 0.50, 0.10, 0.20, 0.08, 0.8, 0, 0, 0, 250, 1)
-					DrawTxt("~e~INCONSCIENTE", 0.50, 0.07, 0.8, 0.8, true, 255, 255, 255, 255, true)
+					DrawTxt("~e~UNCONSCIOUS", 0.50, 0.07, 0.8, 0.8, true, 255, 255, 255, 255, true)
 
 					if PromptIsEnabled(prompt_respawn) == 0 then
 						PromptSetEnabled(prompt_respawn, true)
@@ -462,7 +462,7 @@ function HandleAsInjured(fatal)
 					end
 				else
 					DrawSprite("menu_textures", "translate_bg_1a", 0.50, 0.10, 0.20, 0.15, 0.8, 0, 0, 0, 250, 1)
-					DrawTxt("~e~INCONSCIENTE", 0.50, 0.04, 0.8, 0.8, true, 255, 255, 255, 255, true)
+					DrawTxt("~e~UNCONSCIOUS", 0.50, 0.04, 0.8, 0.8, true, 255, 255, 255, 255, true)
 					DrawTxt(Config.LocaleTimer, 0.50, 0.095, 0.4, 0.4, true, 255, 255, 255, 255, true)
 					DrawTxt("" .. string.format("%.0f", math.max(fullDeathTimeDiff / 1000, 0)), 0.50, 0.12, 0.5, 0.5, true, 255, 255, 255, 255, true)
 				end
@@ -520,9 +520,9 @@ function HandleAsInjured(fatal)
 
 				if fakeGameplayCam == nil then
 					--[[
-								A camera por algum motivo não existe enquanto
-								nosso player está morto definitivamente, então a gente
-								recria a camera
+								The camera for some reason does not exist while
+								our player is definitely dead, so we
+								recreate the camera
 							]]
 					CreateFakeCam()
 				end
@@ -540,10 +540,10 @@ function HandleAsInjured(fatal)
 
 				if PromptIsEnabled(prompt_getup) and NativePromptHasMashModeCompleted(prompt_getup) then
 					--[[
-								O player tem o prompt de levantar ativo na tela
-								e apertou o prompt por completo
-								então a gente levanta ele e diminui a quantidade
-								de vezes restantes para levantar
+								The player has the wake up prompt active on the screen
+								and pressed the prompt completely
+								so we lift it and reduce the amount
+								of times left to get up
 							]]
 					PromptSetEnabled(prompt_getup, false)
 					PromptSetVisible(prompt_getup, false)
@@ -565,9 +565,9 @@ function HandleAsInjured(fatal)
 
 					if timesLeftPlayerCanGetUp > 0 then
 						--[[
-									O player morreu novamente por razoes externas
-									(não foi pelo nosso sistema de desmaiar novamente)
-									então se verifica se o prompt tá ativo, caso nao esteja
+									The player died again for external reasons
+									(it wasn't by our fainting system again)
+									then it checks if the prompt is active, if not
 								]]
 						PromptSetVisible(prompt_getup, true)
 
@@ -586,7 +586,7 @@ function HandleAsInjured(fatal)
 							end
 						end
 					else
-						-- print("Chamando HandleAsInjured acabou as chances de levantar")
+						-- print("Calling HandleAsInjured ended the chances of raising")
 
 						isBadlyInjuried = false
 
@@ -603,27 +603,27 @@ function HandleAsInjured(fatal)
 
 				-- if fullDeathTimeDiff > 0 then
 				--[[
-									O player ainda tem varios segundos antes de morrer definitivamente
-									então a gente mostra quantos segundos faltam
+									The player still has several seconds before it definitely dies
+									so we show how many seconds are left
 								]]
 				DrawSprite("menu_textures", "translate_bg_1a", 0.50, 0.10, 0.20, 0.08, 0.8, 0, 0, 0, 250, 1)
-				DrawTxt("~e~DESMAIADO", 0.50, 0.07, 0.8, 0.8, true, 255, 255, 255, 255, true)
+				DrawTxt("~e~UNCONSCIOUS", 0.50, 0.07, 0.8, 0.8, true, 255, 255, 255, 255, true)
 			else
 				if fakeGameplayCam ~= nil then
 					--[[
-								A camera por algum motivo não existe enquanto
-								nosso player está desmaiado, então a gente
-								recria a camera
+								The camera for some reason does not exist while
+								our player is passed out, so we
+								recreate the camera
 							]]
 					DestroyFakeCam()
 				end
 
-				-- 0.1% de chance do player desmaiar de novo
+				-- 0.1% chance of the player to pass out again
 				if lastDiceChance ~= nil and lastDiceChance <= 1 then
 					SetEntityHealth(ped, 0)
 
 					if timesLeftPlayerCanGetUp > 0 then
-						-- Player tem mais chances de reviver, reativa os prompts
+						-- Player is more likely to revive, re-enable prompts
 
 						PromptSetEnabled(prompt_getup, true)
 						PromptSetVisible(prompt_getup, true)
@@ -720,7 +720,7 @@ function InitiateRespawnPrompt()
 	prompt_respawn = PromptRegisterBegin()
 	-- 0xE8342FF2
 	PromptSetControlAction(prompt_respawn, 0x7F8D09B8)
-	PromptSetText(prompt_respawn, CreateVarString(10, "LITERAL_STRING", "Renascer"))
+	PromptSetText(prompt_respawn, CreateVarString(10, "LITERAL_STRING", "Revive"))
 	PromptSetStandardMode(prompt_respawn, true)
 	PromptSetEnabled(prompt_respawn, false)
 	PromptSetVisible(prompt_respawn, 1)
@@ -742,7 +742,7 @@ function InitiateGetUpPrompt()
 	prompt_getup = PromptRegisterBegin()
 	-- 0xE8342FF2
 	PromptSetControlAction(prompt_getup, 0xDFF812F9)
-	PromptSetText(prompt_getup, CreateVarString(10, "LITERAL_STRING", "Levantar"))
+	PromptSetText(prompt_getup, CreateVarString(10, "LITERAL_STRING", "Get Up"))
 	PromptSetStandardMode(prompt_getup, true)
 	PromptSetEnabled(prompt_getup, 1)
 	PromptSetVisible(prompt_getup, 1)
@@ -755,7 +755,7 @@ function InitiateGetUpPrompt()
 
 	prompt_giveup = PromptRegisterBegin()
 	PromptSetControlAction(prompt_giveup, 0x7F8D09B8)
-	PromptSetText(prompt_giveup, CreateVarString(10, "LITERAL_STRING", "Desistir"))
+	PromptSetText(prompt_giveup, CreateVarString(10, "LITERAL_STRING", "Give Up"))
 	PromptSetStandardMode(prompt_giveup, true)
 	PromptSetEnabled(prompt_giveup, 1)
 	PromptSetVisible(prompt_giveup, 1)
@@ -914,18 +914,18 @@ function DestroyDeathRelatedInformation()
 	deathCause = nil
 	damageBone = {0}
 	BodyPartDamage = {
-		["cabeça"] = {},
-		["pescoço"] = {},
-		["coluna"] = {},
-		["maoesquerda"] = {},
-		["maodireita"] = {},
-		["braçodireito"] = {},
-		["braçoesquerdo"] = {},
-		["pernadireita"] = {},
-		["pedireito"] = {},
-		["pernaesquerda"] = {},
-		["peesquerdo"] = {},
-		["genitaria"] = {}
+		["head"] = {},
+		["neck"] = {},
+		["spine"] = {},
+		["left hand"] = {},
+		["right hand"] = {},
+		["right arm"] = {},
+		["left arm"] = {},
+		["right leg"] = {},
+		["right foot"] = {},
+		["left leg"] = {},
+		["left foot"] = {},
+		["genitalia"] = {}
 	}
 	ClearTimecycleModifier()
 	DisplayHud(true)
