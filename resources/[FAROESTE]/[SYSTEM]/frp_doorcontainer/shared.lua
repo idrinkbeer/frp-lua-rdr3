@@ -3,7 +3,7 @@ local CLIENT = not SERVER
 
 -- doorHash { isOpen | doorPair | doorMinGroup }
 local doorStates = {
-    -- MANSÃO
+    -- MANSION
     -- [1595076728] = {isOpen = false, pair =1439227364},
     -- [1439227364] = {isOpen = false, pair =1595076728},
     -- [530930529] = {isOpen = false, pair =1299101427},
@@ -71,7 +71,7 @@ local doorStates = {
     [2058564250] = {isOpen = true},
     [1634115439] = {isOpen = true, pair = 3445627749},
     [3445627749] = {isOpen = true, pair = 1634115439},
-    -- DP SAINT DENIS
+    -- PD SAINT DENIS
     [417663242] = {isOpen = true, pair = 1611175760},
     [1611175760] = {isOpen = true, pair = 417663242},
     [3124713594] = {isOpen = false, pair = 1879655431},
@@ -256,7 +256,7 @@ Citizen.CreateThread(
                     local User = API.getUserFromSource(_source)
 
                     if not doorStates[doorHash] then
-                        User:notify("error", "ERROR PORTA REGISTRADA???")
+                        User:notify("error", "REGISTERED DOOR ERROR???") --huh
                         return
                     end
 
@@ -268,7 +268,7 @@ Citizen.CreateThread(
 
                     local Character = User:getCharacter()
                     if Character == nil or not Character:hasGroupOrInheritance(doorGroup) then
-                        User:notify("error", "Você não pode abrir esta porta")
+                        User:notify("error", "you can't open this door")
                         return
                     end
 
@@ -277,7 +277,7 @@ Citizen.CreateThread(
 
                     if doorStates[doorHash].pair ~= nil then
                         local doorPair = doorStates[doorHash].pair
-                        print("Porta " .. doorHash .. " com par, porém o par não foi definido ...")
+                        print("Door " .. doorHash .. " with pair, but the pair has not been defined ...")
                         if doorStates[doorPair] and doorStates[doorPair].isOpen then
                             doorStates[doorPair].isOpen = newDoorState
                         end
@@ -447,7 +447,7 @@ Citizen.CreateThread(
 
                                 if HasEntityClearLosToEntityInFront(ped, doorEntity, 0) and not playingUnlockAnimation then
                                     if isOpen == true then
-                                        PromptSetActiveGroupThisFrame(prompt_group_close, CreateVarString(10, "LITERAL_STRING", "Porta"))
+                                        PromptSetActiveGroupThisFrame(prompt_group_close, CreateVarString(10, "LITERAL_STRING", "Door"))
 
                                         if PromptHasHoldModeCompleted(prompt_close) then
                                             PromptSetEnabled(prompt_close, false)
@@ -463,7 +463,7 @@ Citizen.CreateThread(
                                         end
                                     else
                                         if closestDoor_displayasclosed == false then
-                                            PromptSetActiveGroupThisFrame(prompt_group_open, CreateVarString(10, "LITERAL_STRING", "Porta"))
+                                            PromptSetActiveGroupThisFrame(prompt_group_open, CreateVarString(10, "LITERAL_STRING", "Door"))
 
                                             if PromptHasHoldModeCompleted(prompt_open) then
                                                 PromptSetEnabled(prompt_open, false)
@@ -479,9 +479,9 @@ Citizen.CreateThread(
                                             end
                                         else
                                             if hourOpenAt then
-                                                PromptSetActiveGroupThisFrame(prompt_group_open, CreateVarString(10, "LITERAL_STRING", "Fechado, Abre às " .. hourOpenAt))
+                                                PromptSetActiveGroupThisFrame(prompt_group_open, CreateVarString(10, "LITERAL_STRING", "Closed, open at " .. hourOpenAt))
                                             else
-                                                PromptSetActiveGroupThisFrame(prompt_group_open, CreateVarString(10, "LITERAL_STRING", "Fechado"))
+                                                PromptSetActiveGroupThisFrame(prompt_group_open, CreateVarString(10, "LITERAL_STRING", "Closed"))
                                             end
 
                                             DisableControlAction(0, 0xDFF812F9, true) -- Abrir/Fechar
@@ -499,7 +499,7 @@ Citizen.CreateThread(
 
                 prompt_open = PromptRegisterBegin()
                 PromptSetControlAction(prompt_open, 0xDFF812F9)
-                PromptSetText(prompt_open, CreateVarString(10, "LITERAL_STRING", "Abrir"))
+                PromptSetText(prompt_open, CreateVarString(10, "LITERAL_STRING", "Open"))
                 PromptSetEnabled(prompt_open, true)
                 PromptSetVisible(prompt_open, true)
                 PromptSetHoldMode(prompt_open, true)
@@ -510,7 +510,7 @@ Citizen.CreateThread(
 
                 prompt_close = PromptRegisterBegin()
                 PromptSetControlAction(prompt_close, 0xDFF812F9)
-                PromptSetText(prompt_close, CreateVarString(10, "LITERAL_STRING", "Fechar"))
+                PromptSetText(prompt_close, CreateVarString(10, "LITERAL_STRING", "Close"))
                 PromptSetEnabled(prompt_close, true)
                 PromptSetVisible(prompt_close, true)
                 PromptSetHoldMode(prompt_close, true)
