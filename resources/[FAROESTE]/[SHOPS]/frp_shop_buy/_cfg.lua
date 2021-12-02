@@ -33,7 +33,7 @@ Config.ShopDatas = {
 		}
 	},
 	{
-		name = "Mercado Geral",
+		name = "General Store",
 		{
 			{"tobacco_seed", 1, 10, 4},
 			{"corn_seed", 1, 10, 4},
@@ -50,7 +50,7 @@ Config.ShopDatas = {
 		}
 	},
 	{
-		name = "Mercado Clandestino",
+		name = "Store",
 		{
 			{"medicine_poor", 1, 1000, 100},
 			{"stimulant_poor", 1, 1000, 100},
@@ -99,12 +99,12 @@ Config.ShopLocations = {
 	-- 	{1296.121, -1279.396, 75.834}
 	-- },
 
-	["Mercado Clandestino"] = {
+	["Store"] = {
 		{2859.706,-1200.646,49.590}
 	},
 
 
-	["Mercado Geral"] = {
+	["General Store"] = {
 		{1327.907, -1292.865, 77.023},
 		{-785.338, -1323.850, 43.884}
 	}
