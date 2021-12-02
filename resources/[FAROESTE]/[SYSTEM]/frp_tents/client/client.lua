@@ -18,7 +18,7 @@ AddEventHandler('FRP:TENTS:usedItem', function(model)
     local x, y, z = table.unpack(coords + forward * 1.6)
 
     if GetCurrentTownName() ~= false then
-        TriggerEvent('FRP:NOTIFY:Simple', "Você não pode montar acampamento próximo a uma cidade.", 5000)
+        TriggerEvent('FRP:NOTIFY:Simple', "You cannot set up camp near a city.", 5000)
         return
     end
 
