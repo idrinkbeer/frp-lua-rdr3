@@ -99,7 +99,7 @@ Citizen.CreateThread(
 
         prompt_craft = PromptRegisterBegin()
         PromptSetControlAction(prompt_craft, 0xDFF812F9)
-        PromptSetText(prompt_craft, CreateVarString(10, "LITERAL_STRING", "Produzir"))
+        PromptSetText(prompt_craft, CreateVarString(10, "LITERAL_STRING", "Craft"))
         PromptSetEnabled(prompt_craft, true)
         PromptSetVisible(prompt_craft, true)
         PromptSetHoldMode(prompt_craft, true)
@@ -109,7 +109,7 @@ Citizen.CreateThread(
         prompt_cancel = PromptRegisterBegin()
         -- 0x05CA7C52
         PromptSetControlAction(prompt_cancel, 0x05CA7C52)
-        PromptSetText(prompt_cancel, CreateVarString(10, "LITERAL_STRING", "Cancelar"))
+        PromptSetText(prompt_cancel, CreateVarString(10, "LITERAL_STRING", "Cancel"))
         PromptSetEnabled(prompt_cancel, true)
         PromptSetVisible(prompt_cancel, true)
         PromptSetHoldMode(prompt_cancel, true)
