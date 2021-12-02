@@ -1,8 +1,8 @@
 local butchers = {
-    vec3(-1753.07, -394.78, 156.18), --Cabana de Açougue de Strawberry
-    vec3(-341.08, 767.16, 116.71), --Cabana de Açougue de Valentine
-    vec3(1296.28, -1279.22, 75.84), --Cabana de Açougue de Rhodes
-    vec3(-5507.733, -2947.984, -1.861), --Cabana de Açougue de Tumbleweed
+    vec3(-1753.07, -394.78, 156.18), --Strawberry
+    vec3(-341.08, 767.16, 116.71), --Valentine 
+    vec3(1296.28, -1279.22, 75.84), --Rhodes
+    vec3(-5507.733, -2947.984, -1.861), --Tumbleweed
     vec3(-930.643, -1392.803, 50.365)
 }
 
