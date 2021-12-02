@@ -59,7 +59,7 @@ while true do
             
         --    local prompt = PromptRegisterBegin()
             PromptSetControlAction(prompt, 0xE8342FF2)
-            PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Vender Provisões"))
+            PromptSetText(prompt, CreateVarString(10, "LITERAL_STRING", "Sell Provisions"))
             PromptSetEnabled(prompt, 1)
             PromptSetVisible(prompt, 1)
             PromptSetStandardMode(prompt, 1)
@@ -2541,7 +2541,7 @@ while true do
             end
             end
             --DrawTxt("Pressione ALT para vender suas provições", 0.87, 0.95, 0.4, 0.4, false, 255, 255, 255, 145, 100, 7)
-          --  DrawTxt("Pressione ALT para vender suas provições", 0.50, 0.95, 0.4, 0.4, true, 255, 255, 255, 150, false)
+            --DrawTxt("Pressione ALT para vender suas provições", 0.50, 0.95, 0.4, 0.4, true, 255, 255, 255, 150, false)
         else
             WarMenu.CloseMenu()
         end
