@@ -1,6 +1,6 @@
-# FRP FRAMEWORK - Faroeste Roleplay 1.0.0
+# FRP FRAMEWORK - Faroeste Roleplay 1.0.0 Fully Translated To English!
 
-**Developers/Founders:** [Key_Value](https://github.com/slashkeyvalue) and [KlandesTino](https://github.com/klandestino7) 
+**Developers/Founders/Translator:** [Key_Value](https://github.com/slashkeyvalue) and [KlandesTino](https://github.com/klandestino7) and [RedHarlow](https://github.com/redharlow2614)
 
 **Discord**: [FRP - Framework](https://discord.gg/uVDf5kGbB8)
 
