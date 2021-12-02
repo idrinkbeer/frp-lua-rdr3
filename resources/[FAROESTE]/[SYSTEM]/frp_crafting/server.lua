@@ -133,10 +133,10 @@ AddEventHandler(
 
             if ItemData == nil or (ItemData:getWeight() * o_amount) > Inventory:getCapacity() then
                 if ItemData == nil then
-                    User:notify("error", "Output não registrado corretamente, notifique a staff")
+                    User:notify("error", "Output not registered correctly, notify staff")
                 end
 
-                User:notify("error", "Sem espaço no aforje!")
+                User:notify("error", "No Space")
 
                 return
             end
