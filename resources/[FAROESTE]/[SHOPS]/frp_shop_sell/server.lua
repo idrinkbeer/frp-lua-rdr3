@@ -5,19 +5,19 @@ API = Proxy.getInterface("API")
 cAPI = Tunnel.getInterface("API")
 
 local verificationData = {
-    ["Mercado Geral"] = {
+    ["General Store"] = {
         ["tobacco"] = {1, 1, 10},
         ["corn"] = {1, 1, 10},
         ["sugarcane"] = {1, 1, 10},
     },
-    ["Acogueiro"] = {
+    ["Butcher"] = {
         ["meat_poor"] = {75, 1, 1},
         ["meat_good"] = {137, 1, 1},
         ["meat_perfect"] = {356, 1, 1},
         -- ["feather_1"] = {100, 25, 5}
         -- ["feather_2"] = {100, 1, 5}
     },
-    ["Posto de Troca"] = {
+    ["Trading"] = {
         ["raw_coal"] = {100, 40, 2},
         ["raw_iron"] = {200, 80, 2},
         ["raw_copper"] = {300, 120, 2}
@@ -55,7 +55,7 @@ AddEventHandler(
 
         if Inventory:getItemAmount(itemId) < itemAmount then
             local idata = API.getItemDataFromId(itemId)
-            User:notify("error", "Você precisa de no mínimo x" .. itemAmount .. " " .. idata:getName() .. " para vender!")
+            User:notify("error", "You need at least x" .. itemAmount .. " " .. idata:getName() .. " to sell!")
             return
         end
 
