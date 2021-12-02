@@ -63,7 +63,7 @@ AddEventHandler(
         local itemLevel = itemData[1]
 
         if Character:getLevel() < itemLevel then
-            User:notify("error", "Você não tem level suficiente")
+            User:notify("error", "You don't have enough level")
             return
         end
 
@@ -78,7 +78,7 @@ AddEventHandler(
         end
 
         if Inventory:getItemAmount(currencyItem) < itemPrice then
-            User:notify("error", "Você não tem dinheiro suficiente")
+            User:notify("error", "You do not have enough money")
             return
         end
 
@@ -95,7 +95,7 @@ AddEventHandler(
             end
             User:notify("item", itemId, itemAmount)
         else
-            User:notify("error", "Espaço insuficiente na bolsa!")
+            User:notify("error", "Insufficient space!")
         end
     end
 )
