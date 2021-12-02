@@ -5,13 +5,13 @@ API = Proxy.getInterface("API")
 cAPI = Tunnel.getInterface("API")
 
 RegisterCommand(
-    "o",
+    "online",
     function(source, args, raw)
         local listingType = args[1]
 
         local types = {
-            ["medico"] = {group = "medic", displayName = "Medicos"},
-            ["policia"] = {group = "trooper", displayName = "Policiais"}
+            ["medico"] = {group = "medic", displayName = "Doctor's"},
+            ["policia"] = {group = "trooper", displayName = "Police"}
         }
 
         local User = API.getUserFromSource(source)
