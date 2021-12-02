@@ -35,7 +35,7 @@ Citizen.CreateThread(
 						local Inventory = Character:getInventory()
 
 						if Inventory:addItem("money", payment) then
-							User:notify("alert", "Você acabou de receber o seu salário. Aproveite!")
+							User:notify("alert", "You have just received your salary. Enjoy!")
 						else
 							-- if withHoldingPaymentToUsers[user_id] then
 							-- 	payment = payment + withHoldingPaymentToUsers[user_id]
