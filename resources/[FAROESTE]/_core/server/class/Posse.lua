@@ -94,7 +94,7 @@ function API.Posse(id, charid, name, members)
 
                     if UserMember ~= nil and UserMember:getCharacter():getId() == memberCharId then
                         UserMember:setPosse(nil)
-                        UserMember:notify('O bando em qual você estava foi deletado!')
+                        UserMember:notify('The posse you were in has been deleted!')
                     else
                         API.Character:remData(memberCharId, 'metaData', 'posse')
                     end
@@ -110,7 +110,7 @@ function API.Posse(id, charid, name, members)
                     API.Character:remData(charid, 'metaData', 'posse')
                 end
 
-                self:notifyMembers('CharId ' .. charid .. ' saiu do bando!')
+                self:notifyMembers('CharId ' .. charid .. ' left the posse')
                 self.members[charid] = nil
             end
         end
