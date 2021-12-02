@@ -6,7 +6,7 @@ API_DB = Proxy.getInterface("API_DB")
 cAPI = Tunnel.getInterface("API")
 
 RegisterCommand(
-    "bando",
+    "posse",
     function(source, args, rawCommand)
         local User = API.getUserFromSource(source)
         if User:isInAPosse() then
@@ -62,12 +62,12 @@ AddEventHandler(
 
         if not User:isInAPosse() then
             if level < 10 then
-                User:notify("Para criar um bando você precisa ter level maior que 10")
+                User:notify("Must Be level 10 or up to create a Posse")
                 return
             end
             TriggerEvent("FRP:POSSE:createBando", _source)
         else
-            TriggerClientEvent("FRP:NOTIFY:Simple", _source, "Você já está em um bando, para criar um novo deve sair do atual.", 5000)
+            TriggerClientEvent("FRP:NOTIFY:Simple", _source, "Already in a Posse...", 5000)
         end
     end
 )
@@ -77,16 +77,16 @@ AddEventHandler(
     "FRP:POSSE:createBando",
     function(source)
         local _source = source
-        local PosseName = cAPI.prompt(source, "Nome do seu Bando", "")
+        local PosseName = cAPI.prompt(source, "Name of Posse", "")
 
         local User = API.getUserFromSource(_source)
 
         if PosseName == "" then
-            TriggerClientEvent("FRP:NOTIFY:Simple", _source, "Você não digitou um nome válido", 5000)
+            TriggerClientEvent("FRP:NOTIFY:Simple", _source, "You have not entered a valid name.", 5000)
             return
         end
         API.createPosse(User:getCharacter():getId(), PosseName)
-        TriggerClientEvent("FRP:NOTIFY:Simple", _source, "Registro do " .. PosseName .. " efetuado com Sucesso.", 5000)
+        TriggerClientEvent("FRP:NOTIFY:Simple", _source, "Registration of the " .. PosseName .. " carried out with Success.", 5000)
     end
 )
 
@@ -99,7 +99,7 @@ AddEventHandler(
         local Character = User:getCharacter()
 
         if not User:isInAPosse() then
-            User:notify("Você não está em um bando")
+            User:notify("Not in a Posse")
             TriggerClientEvent("FRP:POSSE:CloseMenu", _source)
             return
         end
@@ -111,31 +111,31 @@ AddEventHandler(
         local userRank = Posse:getMemberRank(Character:getId())
 
         if userRank == 3 then
-            User:notify("Somente um membro de cargo superior pode conviar para o bando")
+            User:notify("Only a Higher-Ranking member can invite someone to the posse...")
             return
         end
 
         if UserTarget == nil then
-            User:notify("Usuario de id " .. targetUserId .. " não está online")
+            User:notify("User id " .. targetUserId .. " not online")
             return
         end
 
         if UserTarget:isInAPosse() then
-            User:notify("Usuario de id " .. targetUserId .. " já se encontra em um bando!")
+            User:notify("User id " .. targetUserId .. " already in a Posse!")
             return
         end
 
-        User:notify("Você convidou o ID " .. targetUserId .. " para entrar no bando")
+        User:notify("You invited ID " .. targetUserId .. " to join the Posse")
 
-        UserTarget:notify("Você foi convidado a entrar no bando.")
+        UserTarget:notify("You were invited to join a Posse")
 
-        local yes = cAPI.request(TargetSource, "Convite para o Bando " .. Posse:getName() .. " ?", 30)
+        local yes = cAPI.request(TargetSource, "Accept invitation to the Posse " .. Posse:getName() .. " ?", 30)
 
         if yes then
-            UserTarget:notify("Você entrou no bando " .. Posse:getName())
+            UserTarget:notify("You join Posse " .. Posse:getName())
             Posse:addMember(UserTarget, 3)
         else
-            User:notify("User " .. targetUserId .. " recusou o convite")
+            User:notify("User " .. targetUserId .. " Decline the invite")
         end
     end
 )
@@ -151,7 +151,7 @@ AddEventHandler(
         local UserT = API.getUserFromSource(TargetSource)
 
         if not User:isInAPosse() then
-            User:notify("Você não está em um bando")
+            User:notify("You are not in a Posse")
             TriggerClientEvent("FRP:POSSE:CloseMenu", _source)
             return
         end
@@ -161,13 +161,13 @@ AddEventHandler(
         local Posse = API.getPosse(User:getPosseId())
 
         if not Posse:isAMember(TCharacter:getId()) then
-            User:notify(TCharacter:getName() .. " não faz mais parte do bando")
+            User:notify(TCharacter:getName() .. " Left the Posse")
             return
         end
 
         local targetRank = Posse:getMemberRank(TCharacter:getId())
         if targetRank <= 2 then
-            User:notify(TCharacter:getName() .. " já está no rank mais alto")
+            User:notify(TCharacter:getName() .. " Already Highest Rank")
             return
         end
 
@@ -175,12 +175,12 @@ AddEventHandler(
 
         if userRank <= 2 then
             if userRank == targetRank then
-                User:notify("Somente um membro de cargo superior pode promover este membro")
+                User:notify("Only a senior member can promote this member.")
                 return
             end
 
             Posse:promoteMember(TCharacter:getId())
-            Posse:notifyMembers(TCharacter:getName() .. " foi promovido no Bando!")
+            Posse:notifyMembers(TCharacter:getName() .. " Was promoted in the Posse")
         end
     end
 )
@@ -196,7 +196,7 @@ AddEventHandler(
         local UserT = API.getUserFromSource(TargetSource)
 
         if not User:isInAPosse() then
-            User:notify("Você não está em um bando")
+            User:notify("You are not in a Posse")
             TriggerClientEvent("FRP:POSSE:CloseMenu", _source)
             return
         end
@@ -206,13 +206,13 @@ AddEventHandler(
         local Posse = API.getPosse(User:getPosseId())
 
         if not Posse:isAMember(TCharacter:getId()) then
-            User:notify(TCharacter:getName() .. " não faz mais parte do bando")
+            User:notify(TCharacter:getName() .. " Left the Posse")
             return
         end
 
         local targetRank = Posse:getMemberRank(TCharacter:getId())
         if targetRank == 3 then
-            User:notify(charName .. " já está no rank mais baixo!")
+            User:notify(charName .. " Is already in the lowest rank!")
             return
         end
 
@@ -220,12 +220,12 @@ AddEventHandler(
 
         if userRank <= 2 then
             if userRank == targetRank then
-                User:notify("Somente um membro de cargo superior pode rebaixar este membro")
+                User:notify("Only a senior member can demote this member.")
                 return
             end
 
             Posse:demoteMember(TCharacter:getId())
-            Posse:notifyMembers(TCharacter:getName() .. " foi rebaixado no Bando!")
+            Posse:notifyMembers(TCharacter:getName() .. " was demoted!")
         end
     end
 )
@@ -238,7 +238,7 @@ AddEventHandler(
         local User = API.getUserFromSource(_source)
 
         if not User:isInAPosse() then
-            User:notify("Você não está em um bando")
+            User:notify("You are not in a Posse")
             TriggerClientEvent("FRP:POSSE:CloseMenu", _source)
             return
         end
@@ -247,9 +247,9 @@ AddEventHandler(
         local Posse = API.getPosse(User:getPosseId())
 
         Posse:removeMember(Character:getId())
-        Posse:notifyMembers(Character:getName() .. " saiu do bando!")
+        Posse:notifyMembers(Character:getName() .. " Left the Posse!")
 
-        User:notify("Você saiu do bando!")
+        User:notify("You left the Posse!")
     end
 )
 
@@ -261,7 +261,7 @@ AddEventHandler(
         local User = API.getUserFromSource(TargetSource)
 
         if not User:isInAPosse() then
-            User:notify("Você não está em um bando")
+            User:notify("You are not in a Posse")
             TriggerClientEvent("FRP:POSSE:CloseMenu", _source)
             return
         end
@@ -270,8 +270,8 @@ AddEventHandler(
         local Posse = API.getPosse(User:getPosseId())
 
         Posse:removeMember(Character:getId())
-        Posse:notifyMembers(Character:getName() .. " foi removido do bando!")
+        Posse:notifyMembers(Character:getName() .. " was removed from the Posse")
 
-        User:notify("Você foi removido do bando!")
+        User:notify("You were removed from the Posse!")
     end
 )
