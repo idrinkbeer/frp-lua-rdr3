@@ -8,7 +8,7 @@ local ReviveEnable = false
 local target = nil
 local sort = nil
 RegisterCommand(
-    "checar",
+    "check",
     function(source, args, rawCommand)
         local _source = source
         local User = API.getUserFromSource(source)
@@ -26,7 +26,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "reanimar",
+    "revive",
     function(source, args, rawCommand)
         local _source = source
         local User = API.getUserFromSource(source)
@@ -48,7 +48,7 @@ RegisterCommand(
 )
 
 RegisterCommand(
-    "tratar",
+    "treat",
     function(source, args, rawCommand)
         local _source = source
         local User = API.getUserFromSource(source)
