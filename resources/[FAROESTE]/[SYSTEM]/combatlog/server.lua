@@ -55,7 +55,7 @@ AddEventHandler(
                 --     }
                 -- )
 
-                local message = "**" .. GetPlayerName(source) .. " (" .. user_id .. ")**\n\n" .. "**Desconectado por**\n" .. drop_reason .. "\n\n" .. "**Possíveis combat-logs**\n" .. combat_reasons .. "\n"
+                local message = "**" .. GetPlayerName(source) .. " (" .. user_id .. ")**\n\n" .. "**Disconnected by**\n" .. drop_reason .. "\n\n" .. "**Possible combat-logs**\n" .. combat_reasons .. "\n"
 
                 discordHttpRequest(10798571, "***_vp__internal_COMBATLOG***", message, date)
             end
