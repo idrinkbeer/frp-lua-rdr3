@@ -21,14 +21,14 @@ AddEventHandler(
         local User = API.getUserFromSource(_source)
 
         if farmsInfo[farmAreaId][slot_id] ~= nil then
-            User:notify("error", "Procure outro lugar para plantar!")
+            User:notify("error", "Look for another place to plant!")
             return
         end
 
         -- local type = farmAreaId
 
         if seedTryingToPlant ~= farmAreaId then
-            User:notify("error", "Você não pode plantar esse tipo de semente aqui!")
+            User:notify("error", "You can't plant that kind of seed here!")
             return
         end
 
@@ -37,7 +37,7 @@ AddEventHandler(
 
         local seedItem = farmAreaId .. "_seed"
         if Inventory:getItemAmount(seedItem) <= 0 then
-            User:notify("error", "Você precisa de uma semente para plantar!")
+            User:notify("error", "You need a seed to plant!")
             return
         end
 
@@ -72,10 +72,10 @@ AddEventHandler(
         if (notReadyFarmsInfo[farmAreaId] and notReadyFarmsInfo[farmAreaId][slot_id]) or (farmsInfo[farmAreaId][slot_id][2] > os.time()) then
             -- print("Cuidado! se você regar demais a planta pode morrer")
             if (notReadyFarmsInfo[farmAreaId] and notReadyFarmsInfo[farmAreaId][slot_id]) then
-                print('nao pode regar agora')
+                print('can\'t water now')
             else
-                print("aguarde " .. farmsInfo[farmAreaId][slot_id][2] - os.time() .. " segundos antes de regar a planta")
-                User.notify("Cuidado! se você regar demais a planta pode morrer")
+                print("Wait " .. farmsInfo[farmAreaId][slot_id][2] - os.time() .. " seconds before watering the plant")
+                User.notify("Watch out! if you water too much the plant may die")
             end
             return
         end
@@ -100,7 +100,7 @@ AddEventHandler(
             notReadyFarmsInfo[farmAreaId] = {}
         end
 
-        print("planta regada")
+        print("watered plant")
 
         notReadyFarmsInfo[farmAreaId][slot_id] = newgrowth
 
@@ -117,7 +117,7 @@ AddEventHandler(
                         notReadyFarmsInfo[farmAreaId] = nil
                     end
 
-                    print("planta cresceu")
+                    print("plant grew")
                     for _, player in pairs(API.getPlayersAtArea(farmAreaId)) do
                         TriggerClientEvent("FRP:FARM:SetSpot", player, farmAreaId, slot_id, newgrowth)
                     end
