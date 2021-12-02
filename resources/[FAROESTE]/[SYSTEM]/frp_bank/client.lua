@@ -40,7 +40,7 @@ Citizen.CreateThread(
 
           -- print(weaponHash, hashUnarmed)
           if weaponHash == hashUnarmed then
-            DrawTxt("Aperte (ALT) para acessar seu cofre", 0.85, 0.95, 0.4, 0.4, true, 255, 255, 255, 255, true, 10000)
+            DrawTxt("Press (ALT) to access your vault", 0.85, 0.95, 0.4, 0.4, true, 255, 255, 255, 255, true, 10000)
             if IsControlJustPressed(0, 0xE8342FF2) then
               if not cAPI.IsWanted() then
                 inMenu = true
@@ -48,7 +48,7 @@ Citizen.CreateThread(
                 SendNUIMessage({type = "openGeneral"})
                 TriggerServerEvent("FRP:BANKING:balance2")
               else
-                TriggerEvent('FRP:NOTIFY:Simple', 'Você ainda está como procurado, não pode acessar seu banco. ', 10000)
+                TriggerEvent('FRP:NOTIFY:Simple', 'You are wanted... ', 10000)
               end
             end
           end
@@ -89,7 +89,7 @@ AddEventHandler(
     if distance ~= -1 and distance <= 3.0 then
       TriggerServerEvent("FRP:BANKING:recmoney", GetPlayerServerId(player), amount, jogadornome)
     else
-      TriggerEvent("chatMessage", "^1SISTEMA", {255, 255, 255}, "Ninguem por perto")
+      TriggerEvent("chatMessage", "^1SYSTEM", {255, 255, 255}, "No one nearby")
     end
   end
 )
@@ -122,10 +122,10 @@ AddEventHandler(
       if (playing ~= false) then
         TriggerServerEvent("bank:givecash", toPlayer, tonumber(amount))
       else
-        TriggerEvent("chatMessage", "", {255, 0, 0}, "^1~Jogador não encontrado.")
+        TriggerEvent("chatMessage", "", {255, 0, 0}, "^1~Player not found.")
       end
     else
-      TriggerEvent("chatMessage", "", {255, 0, 0}, "^1Você não está perto dessa pessoa!")
+      TriggerEvent("chatMessage", "", {255, 0, 0}, "^1You are not close to this person!")
     end
   end
 )
