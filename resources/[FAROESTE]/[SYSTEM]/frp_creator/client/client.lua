@@ -65,13 +65,13 @@ cameraUsing = {
         z=0.5,
     },
     {
-        name = "Rosto",
+        name = "Face",
         x=-0.5,
         y=0.0,
         z=0.6,
     },
     {
-        name = "Corpo",
+        name = "Body",
         x=-1.3,
         y=0.0,
         z=0.4,
@@ -98,7 +98,7 @@ Citizen.CreateThread(
                     createPeds()
                     DestroyAllCams(true)
                     createCamera()
-                    TriggerEvent('FRP:NOTIFY:Simple', 'Utilize as setas do seu teclado e aperte enter para escolher um personagem.', 15000)
+                    TriggerEvent('FRP:NOTIFY:Simple', 'Use the arrow keys on your keyboard and press enter to choose a character.', 15000)
                 else
                     for k, v in pairs(choosePed) do
                         if IsControlJustReleased(0, 0xA65EBAB4) and GetEntityModel(choosePed[k]) == GetHashKey("mp_male") then -- male
@@ -210,7 +210,7 @@ RegisterNUICallback(
 RegisterNUICallback(
     "HeadType",
     function(data)
-        interpCamera2("Rosto", pedSelected)      
+        interpCamera2("Face", pedSelected)      
         if sex == "mp_male" then            
             for k, v in pairs(MaleHeads) do
                 if MaleHeads[k].id == tonumber(data.id) then
@@ -232,7 +232,7 @@ RegisterNUICallback(
 RegisterNUICallback(
     "TomPele",
     function(data)
-        interpCamera2("Corpo", pedSelected)   
+        interpCamera2("Body", pedSelected)   
 
         if sex == "mp_male" then
             for k, v in pairs(MaleTorsos) do
