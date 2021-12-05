@@ -499,6 +499,7 @@ function HandleAsInjured(fatal)
 
 			local pedHealth = GetEntityHealth(ped)
 			if pedHealth <= 0 then
+				exports.spawnmanager:setAutoSpawn(false)
 				Citizen.InvokeNative(0xFA08722A5EA82DA7, "CrossLine01")
 				Citizen.InvokeNative(0xFDB74C9CC54C3F37, 1.0)
 
